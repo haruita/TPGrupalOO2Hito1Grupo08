@@ -1,7 +1,6 @@
 package datos;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 public abstract class UnidadDeVenta {
 
@@ -10,19 +9,14 @@ public abstract class UnidadDeVenta {
 	private String codigoUnico;
 	private double superficie;
 	private Persona responsable;
-	private List<Persona> lstPersonas;
-	private List<Plato> lstPlatos;
-	private List<Pedido> lstPedidos;
+	private Set<Persona> personal;
+	private Set<Plato> platos;
+	private Set<Pedido> pedidos;
 
 	public UnidadDeVenta() {
-		super();
-		this.lstPersonas = new ArrayList<Persona>();
-		this.lstPlatos = new ArrayList<Plato>();
-		this.lstPedidos = new ArrayList<Pedido>();
 	}
 
 	public UnidadDeVenta(String nombreComercial, String codigoUnico, double superficie, Persona responsable) {
-		this();
 		this.nombreComercial = nombreComercial;
 		this.codigoUnico = codigoUnico;
 		this.superficie = superficie;
@@ -69,40 +63,40 @@ public abstract class UnidadDeVenta {
 		this.responsable = responsable;
 	}
 
-	public List<Persona> getLstPersonas() {
-		return lstPersonas;
+	public Set<Persona> getPersonal() {
+		return personal;
 	}
 
-	public void setLstPersonas(List<Persona> lstPersonas) {
-		this.lstPersonas = lstPersonas;
+	public void setPersonal(Set<Persona> personas) {
+		this.personal = personas;
 	}
 
-	public List<Plato> getLstPlatos() {
-		return lstPlatos;
+	public Set<Plato> getPlatos() {
+		return platos;
 	}
 
-	public void setLstPlatos(List<Plato> lstPlatos) {
-		this.lstPlatos = lstPlatos;
+	public void setPlatos(Set<Plato> platos) {
+		this.platos = platos;
 	}
 
-	public List<Pedido> getLstPedidos() {
-		return lstPedidos;
+	public Set<Pedido> getPedidos() {
+		return pedidos;
 	}
 
-	public void setLstPedidos(List<Pedido> lstPedidos) {
-		this.lstPedidos = lstPedidos;
+	public void setPedidos(Set<Pedido> pedidos) {
+		this.pedidos = pedidos;
 	}
 
 	public boolean agregarEmpleado(Persona empleado) {
-		return this.lstPersonas.add(empleado);
+		return this.personal.add(empleado);
 	}
 
 	public boolean agregarPlato(Plato plato) {
-		return this.lstPlatos.add(plato);
+		return this.platos.add(plato);
 	}
 
 	public boolean agregarPedido(Pedido pedido) {
-		return this.lstPedidos.add(pedido);
+		return this.pedidos.add(pedido);
 	}
 
 	@Override

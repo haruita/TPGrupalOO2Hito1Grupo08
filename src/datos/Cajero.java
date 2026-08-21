@@ -8,7 +8,6 @@ public class Cajero extends Persona {
 	private double bonoPorAntiguedad;
 
 	public Cajero() {
-		super();
 	}
 
 	public Cajero(String nombre, String apellido, long dni, LocalDate fechaNacimiento, LocalDate fechaIngreso,

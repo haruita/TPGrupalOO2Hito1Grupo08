@@ -6,11 +6,10 @@ public class FoodTruck extends UnidadDeVenta {
 	private boolean conexionElectrica;
 
 	public FoodTruck() {
-		super();
 	}
 
-	public FoodTruck(String nombreComercial, String codigoUnico, double superficie, Persona responsable,
-			String patente, boolean conexionElectrica) {
+	public FoodTruck(String nombreComercial, String codigoUnico, double superficie, Persona responsable, String patente,
+			boolean conexionElectrica) {
 		super(nombreComercial, codigoUnico, superficie, responsable);
 		this.patente = patente;
 		this.conexionElectrica = conexionElectrica;

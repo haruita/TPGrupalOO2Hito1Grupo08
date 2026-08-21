@@ -6,7 +6,6 @@ public class PuestoDesarmable extends UnidadDeVenta {
 	private int tiempoDeArmado;
 
 	public PuestoDesarmable() {
-		super();
 	}
 
 	public PuestoDesarmable(String nombreComercial, String codigoUnico, double superficie, Persona responsable,

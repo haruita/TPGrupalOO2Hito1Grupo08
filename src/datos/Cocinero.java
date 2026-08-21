@@ -9,7 +9,6 @@ public class Cocinero extends Persona {
 	private double plusCategoria;
 
 	public Cocinero() {
-		super();
 	}
 
 	public Cocinero(String nombre, String apellido, long dni, LocalDate fechaNacimiento, LocalDate fechaIngreso,

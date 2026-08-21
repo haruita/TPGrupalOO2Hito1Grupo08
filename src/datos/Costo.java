@@ -8,8 +8,7 @@ public class Costo {
 	private double porElectricidad;
 
 	public Costo() {
-		super();
-	}
+	};
 
 	public Costo(double porSuperficie, double porMontaje, double porElectricidad) {
 		this.porSuperficie = porSuperficie;

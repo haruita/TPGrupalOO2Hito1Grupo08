@@ -1,23 +1,19 @@
 package datos;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 public class Pedido {
 
 	private int idPedido;
 	private Festival festival;
 	private LocalDate fecha;
-	private List<ItemPlato> lstItemPlatos;
+	private Set<ItemPlato> items;
 
 	public Pedido() {
-		super();
-		this.lstItemPlatos = new ArrayList<ItemPlato>();
 	}
 
 	public Pedido(Festival festival, LocalDate fecha) {
-		this();
 		this.festival = festival;
 		this.fecha = fecha;
 	}
@@ -46,22 +42,22 @@ public class Pedido {
 		this.fecha = fecha;
 	}
 
-	public List<ItemPlato> getLstItemPlatos() {
-		return lstItemPlatos;
+	public Set<ItemPlato> getItems() {
+		return this.items;
 	}
 
-	public void setLstItemPlatos(List<ItemPlato> lstItemPlatos) {
-		this.lstItemPlatos = lstItemPlatos;
+	public void setItems(Set<ItemPlato> items) {
+		this.items = items;
 	}
 
 	public boolean agregarItemPlato(ItemPlato item) {
-		return this.lstItemPlatos.add(item);
+		return this.items.add(item);
 	}
 
 	@Override
 	public String toString() {
 		return "Pedido [idPedido=" + idPedido + ", festival=" + (festival != null ? festival.getNombre() : null)
-				+ ", fecha=" + fecha + ", lstItemPlatos=\n" + lstItemPlatos + "]";
+				+ ", fecha=" + fecha + ", lstItemPlatos=\n" + items + "]";
 	}
 
 	public boolean equals(Pedido pedido) {
@@ -70,7 +66,7 @@ public class Pedido {
 
 	public double calcularTotal() {
 		double total = 0;
-		for (ItemPlato i : this.lstItemPlatos) {
+		for (ItemPlato i : this.items) {
 			total += i.calcularTotalPorItem();
 		}
 		return total;
@@ -78,7 +74,7 @@ public class Pedido {
 
 	public double calcularGanancia() {
 		double costos = 0;
-		for (ItemPlato i : this.lstItemPlatos) {
+		for (ItemPlato i : this.items) {
 			costos += i.getPlato().getCosto() * i.getCantidad();
 		}
 		return (this.calcularTotal() - costos);

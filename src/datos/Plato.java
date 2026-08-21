@@ -8,7 +8,6 @@ public class Plato {
 	private double costo;
 
 	public Plato() {
-		super();
 	}
 
 	public Plato(String nombre, double precio, double costo) {

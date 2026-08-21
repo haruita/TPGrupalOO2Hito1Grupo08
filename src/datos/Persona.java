@@ -14,7 +14,6 @@ public abstract class Persona {
 	protected double sueldoBase;
 
 	public Persona() {
-		super();
 	}
 
 	public Persona(String nombre, String apellido, long dni, LocalDate fechaNacimiento, LocalDate fechaIngreso,

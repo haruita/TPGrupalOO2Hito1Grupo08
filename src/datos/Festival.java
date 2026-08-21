@@ -1,8 +1,8 @@
 package datos;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Iterator;
+import java.util.Set;
 
 public class Festival {
 
@@ -12,11 +12,9 @@ public class Festival {
 	private LocalDate fechaInicio;
 	private LocalDate fechaFin;
 	private Costo costo;
-	private List<UnidadDeVenta> lstUnidades;
+	private Set<UnidadDeVenta> unidades;
 
 	public Festival() {
-		super();
-		this.lstUnidades = new ArrayList<UnidadDeVenta>();
 	}
 
 	public Festival(String nombre, String temporada, LocalDate fechaInicio, LocalDate fechaFin, Costo costo) {
@@ -76,16 +74,37 @@ public class Festival {
 		this.costo = costo;
 	}
 
-	public List<UnidadDeVenta> getLstUnidades() {
-		return lstUnidades;
+	public Set<UnidadDeVenta> getUnidades() {
+		return unidades;
 	}
 
-	public void setLstUnidades(List<UnidadDeVenta> lstUnidades) {
-		this.lstUnidades = lstUnidades;
+	public void setLstUnidades(Set<UnidadDeVenta> unidades) {
+		this.unidades = unidades;
 	}
 
 	public boolean agregarUnidadDeVenta(UnidadDeVenta unidad) {
-		return this.lstUnidades.add(unidad);
+		boolean agregar = false;
+		// Solo se agrega si no esta en el set.
+		if (!(unidades.contains(unidad))) {
+			agregar = unidades.add(unidad);
+		}
+		return agregar;
+	}
+
+	public boolean eliminarUnidadDeVenta(UnidadDeVenta unidad) {
+		UnidadDeVenta borrar = null;
+		boolean eliminar = false;
+		Iterator<UnidadDeVenta> iter = unidades.iterator();
+
+		// Para cuando encuentra uno, no deberia de haber duplicados en el set
+		// Pero es mas rápio que pare cuando encuentra
+		while ((iter.hasNext()) && (borrar == null)) {
+			UnidadDeVenta actual = iter.next();
+			if (actual.equals(unidad))
+				borrar = actual;
+		}
+		eliminar = unidades.remove(borrar);
+		return eliminar;
 	}
 
 	@Override

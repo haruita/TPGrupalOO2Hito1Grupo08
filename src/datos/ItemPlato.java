@@ -7,7 +7,6 @@ public class ItemPlato {
 	private int cantidad;
 
 	public ItemPlato() {
-		super();
 	}
 
 	public ItemPlato(Plato plato, int cantidad) {
