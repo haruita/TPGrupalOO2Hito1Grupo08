@@ -51,8 +51,12 @@ public class Pedido {
 	}
 
 	public boolean agregarItemPlato(ItemPlato item) {
-		return this.items.add(item);
-	}
+		boolean agregar = false;
+		if (!(items.contains(item))) {
+			agregar = this.items.add(item);
+		}
+		return agregar;
+	};
 
 	@Override
 	public String toString() {
