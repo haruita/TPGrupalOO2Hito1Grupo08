@@ -71,7 +71,7 @@ public class Pedido {
 	public double calcularTotal() {
 		double total = 0;
 		for (ItemPlato i : this.items) {
-			total += i.calcularTotalPorItem();
+			total += i.getSubtotal();
 		}
 		return total;
 	}
