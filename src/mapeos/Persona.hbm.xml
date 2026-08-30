@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="datos.Persona" table="persona">
+
+		<id column="idPersona" name="idPersona">
+			<generator class="identity" />
+		</id>
+
+		<property column="nombre" name="nombre" type="string" />
+		<property column="apellido" name="apellido" type="string" />
+		<property column="dni" name="dni" type="long" />
+		<property column="fechaNacimiento" name="fechaNacimiento" type="java.time.LocalDate" />
+		<property column="fechaIngreso" name="fechaIngreso" type="java.time.LocalDate" />
+		<property column="sueldoBase" name="sueldoBase" type="double" />
+
+		<!--
+		<many-to-one column="idUnidadDeVenta" name="unidadDeVenta"
+			class="datos.UnidadDeVenta" not-null="false" />
+		-->
+
+		<joined-subclass name="datos.Cocinero" table="cocinero">
+			<key column="idCocinero" />
+			<property column="especialidad" name="especialidad" type="string" />
+			<property column="categoria" name="categoria" type="string" />
+			<property column="plusCategoria" name="plusCategoria" type="double" />
+		</joined-subclass>
+
+		<joined-subclass name="datos.Cajero" table="cajero">
+			<key column="idCajero" />
+			<property column="turno" name="turno" type="string" />
+			<property column="bonoPorAntiguedad" name="bonoPorAntiguedad" type="double" />
+		</joined-subclass>
+
+	</class>
+
+</hibernate-mapping>
