@@ -49,12 +49,8 @@ public class Cocinero extends Persona {
 				+ ", plusCategoria=" + plusCategoria + "]";
 	}
 
-	public double calcularPlus() {
-		return (this.plusCategoria);
-	}
-
 	@Override
 	public double calcularSueldo() {
-		return (this.sueldoBase + this.calcularPlus());
+		return (this.sueldoBase + this.plusCategoria);
 	}
 }
