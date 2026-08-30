@@ -12,6 +12,7 @@ public abstract class Persona {
 	protected LocalDate fechaNacimiento;
 	protected LocalDate fechaIngreso;
 	protected double sueldoBase;
+	protected UnidadDeVenta unidadDeVenta;
 
 	public Persona() {
 	}
@@ -81,6 +82,14 @@ public abstract class Persona {
 
 	public void setSueldoBase(double sueldoBase) {
 		this.sueldoBase = sueldoBase;
+	}
+
+	public UnidadDeVenta getUnidadDeVenta() {
+		return unidadDeVenta;
+	}
+
+	public void setUnidadDeVenta(UnidadDeVenta unidadDeVenta) {
+		this.unidadDeVenta = unidadDeVenta;
 	}
 
 	@Override
