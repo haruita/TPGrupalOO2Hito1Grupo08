@@ -3,17 +3,25 @@ package datos;
 public class ItemPlato {
 
 	private int idItemPlato;
-	private Plato plato;
 	private int cantidad;
 	private double subtotal;
+	private Plato plato;
+	private Pedido pedido;
 	
 	public ItemPlato() {
 	}
 
-	public ItemPlato(Plato plato, int cantidad, int subTotal) {
+	public ItemPlato(Plato plato, int cantidad) {
 		this.plato = plato;
 		this.cantidad = cantidad;
-		this.subtotal = subTotal;
+		this.subtotal = ItemPlato.calcularSubtotal(cantidad, plato);
+	}
+
+	public ItemPlato(Plato plato, int cantidad, Pedido pedido) {
+		this.plato = plato;
+		this.cantidad = cantidad;
+		this.subtotal = ItemPlato.calcularSubtotal(cantidad, plato);
+		this.pedido = pedido;
 	}
 
 	public int getIdItemPlato() {
@@ -43,21 +51,29 @@ public class ItemPlato {
 	public double getSubtotal() {
 		return subtotal;
 	}
-
+	
 	public void setSubtotal(double subtotal) {
 		this.subtotal = subtotal;
 	}
-	
-	public double calcularSubtotal() {
-		return plato.getPrecio() * cantidad;
+
+	public Pedido getPedido() {
+		return this.pedido;
 	}
 	
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
+	}
+	
+	static private double calcularSubtotal(int cantidad, Plato plato) {
+		return cantidad * plato.getPrecio();
+	}
+
 	@Override
 	public String toString() {
 		return "ItemPlato [idItemPlato=" + idItemPlato + ", plato=" + plato + ", cantidad=" + cantidad + "]";
 	}
 
 	public boolean equals(ItemPlato item) {
-		return (this.getPlato().equals(item.getPlato()) && this.getCantidad() == item.getCantidad());
+		return (this.getPlato().equals(item.getPlato()) && this.cantidad == item.cantidad && this.subtotal == item.subtotal);
 	}
 }
