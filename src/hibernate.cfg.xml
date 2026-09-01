@@ -19,4 +19,5 @@
      	<mapping resource="mapeos/Plato.hbm.xml"/>
      	<mapping resource="mapeos/ItemPlato.hbm.xml"/>
      	<mapping resource="mapeos/Pedidos.hbm.xml"
+     </session-factory>
 </hibernate-configuration>
