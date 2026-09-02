@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.Plato" table="plato">
+    	<id column="idPlato" name="idPlato">
+      		<generator class="identity"/>
+    	</id>
+    	<property name="nombre" column="nombre" type="string" not-null="true"/>
+    	<property name="precio" column="precio" type="double" not-null="true"/>
+    	<property name="costo" column="costo" type="double" not-null="true"/>
+    	
+	    <set name="itemPlatos" table="itemPlato" order-by="idItemPlato asc" inverse="true" lazy="true" fetch="select">
+	        <key column="idPlato"/>
+	        <one-to-many class="datos.ItemPlato" />
+	    </set>
+ </class>
+</hibernate-mapping>

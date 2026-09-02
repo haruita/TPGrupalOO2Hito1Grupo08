@@ -6,15 +6,15 @@ import java.util.Set;
 public class Pedido {
 
 	private int idPedido;
-	private Festival festival;
+	private UnidadDeVenta unidad;
 	private LocalDate fecha;
 	private Set<ItemPlato> items;
 
 	public Pedido() {
 	}
 
-	public Pedido(Festival festival, LocalDate fecha) {
-		this.festival = festival;
+	public Pedido(UnidadDeVenta unidad, LocalDate fecha) {
+		this.unidad = unidad;
 		this.fecha = fecha;
 	}
 
@@ -26,12 +26,12 @@ public class Pedido {
 		this.idPedido = idPedido;
 	}
 
-	public Festival getFestival() {
-		return festival;
+	public UnidadDeVenta getUnidadDeVenta() {
+		return unidad;
 	}
 
-	public void setFestival(Festival festival) {
-		this.festival = festival;
+	public void setUnidadDeVenta(UnidadDeVenta unidad) {
+		this.unidad = unidad;
 	}
 
 	public LocalDate getFecha() {
@@ -60,8 +60,7 @@ public class Pedido {
 
 	@Override
 	public String toString() {
-		return "Pedido [idPedido=" + idPedido + ", festival=" + (festival != null ? festival.getNombre() : null)
-				+ ", fecha=" + fecha + ", lstItemPlatos=\n" + items + "]";
+		return "Pedido [idPedido=" + idPedido + "+ " + "fecha=" + fecha + ", lstItemPlatos=\n" + items + "]";
 	}
 
 	public boolean equals(Pedido pedido) {
