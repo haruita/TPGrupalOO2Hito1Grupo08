@@ -3,16 +3,22 @@ package datos;
 public class FoodTruck extends UnidadDeVenta {
 
 	private String patente;
+
 	private boolean conexionElectrica;
 
 	public FoodTruck() {
+
 	}
 
-	public FoodTruck(String nombreComercial, String codigoUnico, double superficie, Persona responsable, String patente,
-			boolean conexionElectrica) {
+	public FoodTruck(String nombreComercial, String codigoUnico, double superficie, Persona responsable,
+			String patente, boolean conexionElectrica) {
+
 		super(nombreComercial, codigoUnico, superficie, responsable);
+
 		this.patente = patente;
+
 		this.conexionElectrica = conexionElectrica;
+
 	}
 
 	public String getPatente() {
@@ -47,4 +53,5 @@ public class FoodTruck extends UnidadDeVenta {
 
 		return canon;
 	}
+
 }
