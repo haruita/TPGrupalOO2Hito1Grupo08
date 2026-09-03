@@ -1,6 +1,7 @@
 package datos;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -15,6 +16,7 @@ public class Festival {
 	private Set<UnidadDeVenta> unidades;
 
 	public Festival() {
+		this.unidades = new HashSet<UnidadDeVenta>();
 	}
 
 	public Festival(String nombre, String temporada, LocalDate fechaInicio, LocalDate fechaFin, Costo costo) {
@@ -78,6 +80,10 @@ public class Festival {
 		return unidades;
 	}
 
+	public void setUnidades(Set<UnidadDeVenta> unidades) {
+		this.unidades = unidades;
+	}
+
 	public void setLstUnidades(Set<UnidadDeVenta> unidades) {
 		this.unidades = unidades;
 	}
@@ -85,7 +91,7 @@ public class Festival {
 	public boolean agregarUnidadDeVenta(UnidadDeVenta unidad) {
 		boolean agregar = false;
 		// Solo se agrega si no esta en el set.
-		if (!(unidades.contains(unidad))) {
+		if (unidad != null && !(unidades.contains(unidad))) {
 			agregar = unidades.add(unidad);
 		}
 		return agregar;

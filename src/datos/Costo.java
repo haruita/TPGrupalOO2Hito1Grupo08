@@ -1,11 +1,15 @@
 package datos;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Costo {
 
 	private int idCosto;
 	private double porSuperficie;
 	private double porMontaje;
 	private double porElectricidad;
+	private Set<Festival> festivales = new HashSet<Festival>();
 
 	public Costo() {
 	};
@@ -46,6 +50,14 @@ public class Costo {
 
 	public void setPorElectricidad(double porElectricidad) {
 		this.porElectricidad = porElectricidad;
+	}
+
+	public Set<Festival> getFestivales() {
+		return festivales;
+	}
+
+	public void setFestivales(Set<Festival> festivales) {
+		this.festivales = festivales;
 	}
 
 	@Override

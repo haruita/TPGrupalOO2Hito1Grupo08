@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="datos.Costo" table="costo">
+
+		<id column="idCosto" name="idCosto">
+			<generator class="identity" />
+		</id>
+
+		<property column="porSuperficie" name="porSuperficie" type="double" not-null="true" />
+		<property column="porMontaje" name="porMontaje" type="double" not-null="true" />
+		<property column="porElectricidad" name="porElectricidad" type="double" not-null="true" />
+
+		<set name="festivales" table="festival" inverse="true" lazy="true" fetch="select">
+			<key column="idCosto" />
+			<one-to-many class="datos.Festival" />
+		</set>
+
+	</class>
+
+</hibernate-mapping>
