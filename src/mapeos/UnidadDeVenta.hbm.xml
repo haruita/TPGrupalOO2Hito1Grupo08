@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="datos.UnidadDeVenta" table="unidaddeventa" abstract="true">
+
+		<id column="idUnidadDeVenta" name="idUnidadDeVenta">
+			<generator class="identity" />
+		</id>
+
+		<property column="nombreComercial" name="nombreComercial" type="string" not-null="true" />
+		<property column="codigoUnico" name="codigoUnico" type="string" not-null="true" unique="true" length="10" />
+		<property column="superficie" name="superficie" type="double" not-null="true" />
+
+		<many-to-one name="responsable" class="datos.Persona" column="idResponsable" not-null="false" />
+
+		<joined-subclass name="datos.FoodTruck" table="foodtruck">
+			<key column="idUnidadDeVenta" />
+			<property column="patente" name="patente" type="string" />
+			<property column="conexionElectrica" name="conexionElectrica" type="boolean" />
+		</joined-subclass>
+
+		<joined-subclass name="datos.PuestoDesarmable" table="puestodesarmable">
+			<key column="idUnidadDeVenta" />
+			<property column="cantCarpas" name="cantCarpas" type="int" />
+			<property column="tiempoDeArmado" name="tiempoDeArmado" type="int" />
+		</joined-subclass>
+
+	</class>
+
+</hibernate-mapping>

@@ -26,6 +26,14 @@ public class Pedido {
 		this.idPedido = idPedido;
 	}
 
+	public UnidadDeVenta getUnidad() {
+		return unidad;
+	}
+
+	public void setUnidad(UnidadDeVenta unidad) {
+		this.unidad = unidad;
+	}
+
 	public UnidadDeVenta getUnidadDeVenta() {
 		return unidad;
 	}
