@@ -23,25 +23,29 @@ public class ItemPlatoABM {
 	public ItemPlato traerItemPlato(int idItemPlato){
 		return dao.traer(idItemPlato);
 	}
+
+	public ItemPlato traerItemPlatoConPlato(int idItemPlato){
+		return dao.traerConPlato(idItemPlato);
+	}
 	
-	public List<ItemPlato> traerItemPlato(Plato p){
-		return dao.traer(p);
-	}	
-	public ItemPlato traerItemPlatoBasico(int idItemPlato){
-		return dao.traerBasico(idItemPlato);
+	public ItemPlato traerItemPlatoConPedido(int idItemPlato){
+		return dao.traerConPedido(idItemPlato);
+	}
+	
+	public ItemPlato traerItemPlatoConPlatoyPedido(int idItemPlato){
+		return dao.traerConPlatoYPedido(idItemPlato);
 	}
 
 	public int agregar(Plato p,int cantidad,Pedido ped) {
 		ItemPlato ip = new ItemPlato(p,cantidad,ped);
 		return dao.agregar(ip);
 	}
-	
 	public void modificar(ItemPlato ip) {
 		dao.actualizar(ip);
 	}
 	
 	public void eliminar (int idItemPlato) {
-		ItemPlato p = dao.traerBasico(idItemPlato);
+		ItemPlato p = dao.traer(idItemPlato);
 		dao.eliminar(p);
 	}
 	

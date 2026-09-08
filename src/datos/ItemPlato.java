@@ -70,7 +70,7 @@ public class ItemPlato {
 
 	@Override
 	public String toString() {
-		return "ItemPlato [idItemPlato=" + idItemPlato + ", plato=" + plato + ", cantidad=" + cantidad + "]";
+		return "ItemPlato [idItemPlato=" + idItemPlato + ", plato=" + plato + ", cantidad=" + cantidad +", subtotal=" + subtotal+ "]";
 	}
 
 	public boolean equals(ItemPlato item) {

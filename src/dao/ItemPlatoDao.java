@@ -37,7 +37,7 @@ public class ItemPlatoDao {
 	}
 
 	// Lo trae sin el Pedido ni el Plato
-	public ItemPlato traerBasico(int idObjeto) {
+	public ItemPlato traer(int idObjeto) {
 		ItemPlato objeto = null;
 		try {
 			iniciaOperacion();
@@ -48,11 +48,10 @@ public class ItemPlatoDao {
 		return objeto;
 	}
 	
-	public ItemPlato traerSinPedido(int idItemPlato) {
+	public ItemPlato traerConPlato(int idItemPlato) {
 		ItemPlato obj = null;
 		try {
 			iniciaOperacion();
-			// Solo le agrego el plato, por lo tanto sin pedido
 			String hQL = "from ItemPlato item inner join fetch item.plato p where item.idItemPlato=:idItemPlato";
 			obj = (ItemPlato) session.createQuery(hQL).setParameter("idItemPlato", idItemPlato).uniqueResult();
 		} finally {
@@ -61,11 +60,10 @@ public class ItemPlatoDao {
 		return obj;
 	}
 
-	public ItemPlato traerSinPlato(int idItemPlato) {
+	public ItemPlato traerConPedido(int idItemPlato) {
         ItemPlato obj = null;
         try {
             iniciaOperacion();
-            // Solo le agrego el pedido, por lo tanto sin plato
             String hQL = "from ItemPlato item inner join fetch item.pedido pe where item.idItemPlato = :idItemPlato";
             obj = (ItemPlato) session.createQuery(hQL)
                          .setParameter("idItemPlato", idItemPlato)
@@ -77,7 +75,7 @@ public class ItemPlatoDao {
     }
 
 	// Lo trae con el Pedido y el Plato.
-	public ItemPlato traer(int idItemPlato) {
+	public ItemPlato traerConPlatoYPedido(int idItemPlato) {
         ItemPlato obj = null;
         try {
             iniciaOperacion();
@@ -106,20 +104,7 @@ public class ItemPlatoDao {
         }
         return lista;
     }
-    
-	public List<ItemPlato> traer(Plato plato) {
-		List<ItemPlato> lista = null;
-		try {
-			iniciaOperacion();
-			String hQL = "from ItemPlato item inner join fetch item.plato p where p.idPlato=:idPlato";
-			lista = session.createQuery(hQL, ItemPlato.class).
-					setParameter("idPlato", plato.getIdPlato()).
-					getResultList();
-		} finally {
-			session.close();
-		}
-		return lista;
-	}
+
 
 	public int agregar(ItemPlato objeto) {
 		int id = 0;

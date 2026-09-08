@@ -17,7 +17,16 @@ public class Pedido {
 		this.unidad = unidad;
 		this.fecha = fecha;
 	}
-
+	public Pedido(UnidadDeVenta unidad, LocalDate fecha, Set<ItemPlato> items) {
+		this.unidad = unidad;
+		this.fecha = fecha;
+		this.items = items;
+	}
+	
+	public Pedido(LocalDate fecha) {
+		this.fecha = fecha;
+	}
+	
 	public int getIdPedido() {
 		return idPedido;
 	}
@@ -68,7 +77,10 @@ public class Pedido {
 
 	@Override
 	public String toString() {
-		return "Pedido [idPedido=" + idPedido + "+ " + "fecha=" + fecha + ", lstItemPlatos=\n" + items + "]";
+		if (items!= null)
+			return "Pedido [idPedido=" + idPedido + ", " + "fecha=" + fecha + ", lstItemPlatos=\n" + items + "]";
+		else
+			return "Pedido [idPedido=" + idPedido + ", " + "fecha=" + fecha;
 	}
 
 	public boolean equals(Pedido pedido) {
@@ -77,17 +89,25 @@ public class Pedido {
 
 	public double calcularTotal() {
 		double total = 0;
-		for (ItemPlato i : this.items) {
-			total += i.getSubtotal();
+		if (this.items != null) {
+			for (ItemPlato i : this.items) {
+				total += i.getSubtotal();
+			}			
 		}
 		return total;
 	}
 
-	public double calcularGanancia() {
-		double costos = 0;
-		for (ItemPlato i : this.items) {
-			costos += i.getPlato().getCosto() * i.getCantidad();
-		}
-		return (this.calcularTotal() - costos);
-	}
+    public double calcularGanancia() {
+        double ganancia = 0;
+        if (this.items != null) {
+            for (ItemPlato i : this.items) {
+            	Plato plato = i.getPlato();
+            	if (plato != null) {
+                    ganancia += (plato.getPrecio() - plato.getCosto() )* i.getCantidad();
+                }
+            }
+        }
+        return ganancia;
+    }
+
 }
