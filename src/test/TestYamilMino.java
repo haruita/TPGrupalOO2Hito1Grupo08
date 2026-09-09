@@ -27,7 +27,6 @@ public class TestYamilMino {
 					LocalDate.of(2026, 1, 15), c1);
 			int idF2 = festivalABM.agregar("Epicentro Gourmet Invierno", "Invierno 2026", LocalDate.of(2026, 7, 5),
 					LocalDate.of(2026, 7, 10), c2);
-			System.out.println("Creados costos " + idCosto1 + ", " + idCosto2 + " y festivales " + idF1 + ", " + idF2);
 
 			// Basicas (soporte)
 			System.out.println("\n--- Basica: traerFestival(" + idF1 + ") ---");
