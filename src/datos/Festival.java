@@ -84,13 +84,8 @@ public class Festival {
 		this.unidades = unidades;
 	}
 
-	public void setLstUnidades(Set<UnidadDeVenta> unidades) {
-		this.unidades = unidades;
-	}
-
 	public boolean agregarUnidadDeVenta(UnidadDeVenta unidad) {
 		boolean agregar = false;
-		// Solo se agrega si no esta en el set.
 		if (unidad != null && !(unidades.contains(unidad))) {
 			agregar = unidades.add(unidad);
 		}
@@ -102,8 +97,7 @@ public class Festival {
 		boolean eliminar = false;
 		Iterator<UnidadDeVenta> iter = unidades.iterator();
 
-		// Para cuando encuentra uno, no deberia de haber duplicados en el set
-		// Pero es mas rápio que pare cuando encuentra
+		// Para cuando encuentra uno, no debería haber duplicados en el set, pero es mas rápido que pare cuando lo detecta
 		while ((iter.hasNext()) && (borrar == null)) {
 			UnidadDeVenta actual = iter.next();
 			if (actual.equals(unidad))
