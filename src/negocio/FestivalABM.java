@@ -21,36 +21,28 @@ public class FestivalABM {
 		return abm;
 	}
 
+	// Basicas (soporte)
 	public Festival traerFestival(int idFestival) {
 		return dao.traerFestival(idFestival);
-	}
-
-	public Festival traerFestivalConCostoYUnidades(int idFestival) {
-		return dao.traerFestivalConCostoYUnidades(idFestival);
-	}
-
-	public Festival traerFestivalConCosto(int idFestival) {
-		return dao.traerFestivalConCosto(idFestival);
 	}
 
 	public List<Festival> traerFestival() {
 		return dao.traerFestival();
 	}
 
-	public List<Festival> traerPorNombre(String nombre) {
-		return dao.traerPorNombre(nombre);
-	}
-
-	public List<Festival> traerPorTemporada(String temporada) {
-		return dao.traerPorTemporada(temporada);
-	}
-
+	// CU1: vigentes en una fecha
 	public List<Festival> traerVigentesEn(LocalDate fecha) {
 		return dao.traerVigentesEn(fecha);
 	}
 
-	public List<Festival> traerPorCosto(int idCosto) {
-		return dao.traerPorCosto(idCosto);
+	// CU2: solapados con un rango
+	public List<Festival> traerEntreFechas(LocalDate inicio, LocalDate fin) {
+		return dao.traerEntreFechas(inicio, fin);
+	}
+
+	// CU3: festival con unidades (Herencia FoodTruck / PuestoDesarmable)
+	public Festival traerFestivalConUnidades(int idFestival) {
+		return dao.traerFestivalConUnidades(idFestival);
 	}
 
 	public int agregar(String nombre, String temporada, LocalDate fechaInicio, LocalDate fechaFin, Costo costo)

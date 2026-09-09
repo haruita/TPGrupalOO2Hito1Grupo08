@@ -1,5 +1,6 @@
 package negocio;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import dao.CostoDao;
@@ -19,24 +20,23 @@ public class CostoABM {
 		return abm;
 	}
 
-	// CU: consulta basica por id
+	// Basicas (soporte)
 	public Costo traerCosto(int idCosto) {
 		return dao.traerCosto(idCosto);
 	}
 
-	// CU: consulta de costo con sus festivales (relacion Uno a Muchos)
-	public Costo traerCostoConFestivales(int idCosto) {
-		return dao.traerCostoConFestivales(idCosto);
-	}
-
-	// CU: consulta de todos los costos
 	public List<Costo> traerCosto() {
 		return dao.traerCosto();
 	}
 
-	// CU: consulta de costos con porSuperficie mayor al valor dado
-	public List<Costo> traerPorSuperficieMayorA(double valor) {
-		return dao.traerPorSuperficieMayorA(valor);
+	// CU4: costo con festivales (Uno a Muchos)
+	public Costo traerCostoConFestivales(int idCosto) {
+		return dao.traerCostoConFestivales(idCosto);
+	}
+
+	// CU5: esquemas vigentes en una fecha
+	public List<Costo> traerEsquemaVigenteEn(LocalDate fecha) {
+		return dao.traerEsquemaVigenteEn(fecha);
 	}
 
 	public int agregar(double porSuperficie, double porMontaje, double porElectricidad) {

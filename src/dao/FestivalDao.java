@@ -76,6 +76,7 @@ public class FestivalDao {
 		}
 	}
 
+	// Basica: traer por id (soporte, no es CU)
 	public Festival traerFestival(int idFestival) {
 		Festival objeto = null;
 		try {
@@ -87,59 +88,12 @@ public class FestivalDao {
 		return objeto;
 	}
 
-	public Festival traerFestivalConCostoYUnidades(int idFestival) {
-		Festival objeto = null;
-		try {
-			iniciaOperacion();
-			String hQL = "from Festival f left join fetch f.costo left join fetch f.unidades where f.idFestival = :id";
-			objeto = session.createQuery(hQL, Festival.class).setParameter("id", idFestival).uniqueResult();
-		} finally {
-			session.close();
-		}
-		return objeto;
-	}
-
-	public Festival traerFestivalConCosto(int idFestival) {
-		Festival objeto = null;
-		try {
-			iniciaOperacion();
-			String hQL = "from Festival f left join fetch f.costo where f.idFestival = :id";
-			objeto = session.createQuery(hQL, Festival.class).setParameter("id", idFestival).uniqueResult();
-		} finally {
-			session.close();
-		}
-		return objeto;
-	}
-
+	// Basica: traer todos (soporte, no es CU)
 	public List<Festival> traerFestival() throws HibernateException {
 		List<Festival> lista = null;
 		try {
 			iniciaOperacion();
 			lista = session.createQuery("from Festival f left join fetch f.costo order by f.fechaInicio asc", Festival.class).list();
-		} finally {
-			session.close();
-		}
-		return lista;
-	}
-
-	public List<Festival> traerPorNombre(String nombre) {
-		List<Festival> lista = null;
-		try {
-			iniciaOperacion();
-			String hQL = "from Festival f left join fetch f.costo where f.nombre = :nombre";
-			lista = session.createQuery(hQL, Festival.class).setParameter("nombre", nombre).list();
-		} finally {
-			session.close();
-		}
-		return lista;
-	}
-
-	public List<Festival> traerPorTemporada(String temporada) {
-		List<Festival> lista = null;
-		try {
-			iniciaOperacion();
-			String hQL = "from Festival f left join fetch f.costo where f.temporada = :temporada order by f.fechaInicio asc";
-			lista = session.createQuery(hQL, Festival.class).setParameter("temporada", temporada).list();
 		} finally {
 			session.close();
 		}
@@ -158,15 +112,29 @@ public class FestivalDao {
 		return lista;
 	}
 
-	public List<Festival> traerPorCosto(int idCosto) {
+	// Festivales solapados con un rango por años
+	public List<Festival> traerEntreFechas(LocalDate inicio, LocalDate fin) {
 		List<Festival> lista = null;
 		try {
 			iniciaOperacion();
-			String hQL = "from Festival f left join fetch f.costo c where c.idCosto = :idCosto";
-			lista = session.createQuery(hQL, Festival.class).setParameter("idCosto", idCosto).list();
+			String hQL = "from Festival f left join fetch f.costo where f.fechaInicio <= :fin and f.fechaFin >= :inicio order by f.fechaInicio asc";
+			lista = session.createQuery(hQL, Festival.class).setParameter("inicio", inicio)
+					.setParameter("fin", fin).list();
 		} finally {
 			session.close();
 		}
 		return lista;
+	}
+
+	public Festival traerFestivalConUnidades(int idFestival) {
+		Festival objeto = null;
+		try {
+			iniciaOperacion();
+			String hQL = "from Festival f left join fetch f.costo left join fetch f.unidades where f.idFestival = :id";
+			objeto = session.createQuery(hQL, Festival.class).setParameter("id", idFestival).uniqueResult();
+		} finally {
+			session.close();
+		}
+		return objeto;
 	}
 }

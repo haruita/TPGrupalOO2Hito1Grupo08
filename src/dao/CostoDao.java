@@ -1,5 +1,6 @@
 package dao;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.hibernate.HibernateException;
@@ -75,6 +76,7 @@ public class CostoDao {
 		}
 	}
 
+	// Basica: traer por id (soporte, no es CU)
 	public Costo traerCosto(int idCosto) {
 		Costo objeto = null;
 		try {
@@ -86,19 +88,7 @@ public class CostoDao {
 		return objeto;
 	}
 
-	
-	public Costo traerCostoConFestivales(int idCosto) {
-		Costo objeto = null;
-		try {
-			iniciaOperacion();
-			String hQL = "from Costo c left join fetch c.festivales where c.idCosto = :idCosto";
-			objeto = session.createQuery(hQL, Costo.class).setParameter("idCosto", idCosto).uniqueResult();
-		} finally {
-			session.close();
-		}
-		return objeto;
-	}
-	
+	// Basica: traer todos (soporte, no es CU)
 	public List<Costo> traerCosto() throws HibernateException {
 		List<Costo> lista = null;
 		try {
@@ -110,12 +100,24 @@ public class CostoDao {
 		return lista;
 	}
 
-	public List<Costo> traerPorSuperficieMayorA(double valor) {
+	public Costo traerCostoConFestivales(int idCosto) {
+		Costo objeto = null;
+		try {
+			iniciaOperacion();
+			String hQL = "from Costo c left join fetch c.festivales where c.idCosto = :idCosto";
+			objeto = session.createQuery(hQL, Costo.class).setParameter("idCosto", idCosto).uniqueResult();
+		} finally {
+			session.close();
+		}
+		return objeto;
+	}
+
+	public List<Costo> traerEsquemaVigenteEn(LocalDate fecha) {
 		List<Costo> lista = null;
 		try {
 			iniciaOperacion();
-			String hQL = "from Costo c where c.porSuperficie > :valor order by c.porSuperficie asc";
-			lista = session.createQuery(hQL, Costo.class).setParameter("valor", valor).list();
+			String hQL = "select distinct c from Costo c join c.festivales f where f.fechaInicio <= :fecha and f.fechaFin >= :fecha order by c.idCosto asc";
+			lista = session.createQuery(hQL, Costo.class).setParameter("fecha", fecha).list();
 		} finally {
 			session.close();
 		}

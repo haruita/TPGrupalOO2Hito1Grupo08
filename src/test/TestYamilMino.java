@@ -7,17 +7,18 @@ import datos.Costo;
 import datos.Festival;
 import negocio.CostoABM;
 import negocio.FestivalABM;
+import util.TablaASCII;
 
-public class TestFestivalCosto {
+public class TestYamilMino {
 
 	public static void main(String[] args) {
 		CostoABM costoABM = CostoABM.getInstancia();
 		FestivalABM festivalABM = FestivalABM.getInstancia();
 
 		try {
+			// Datos de prueba (solo para poder consultar)
 			int idCosto1 = costoABM.agregar(1500.0, 800.0, 500.0);
 			int idCosto2 = costoABM.agregar(2500.0, 1200.0, 900.0);
-			System.out.println("Costos agregados: " + idCosto1 + ", " + idCosto2);
 
 			Costo c1 = costoABM.traerCosto(idCosto1);
 			Costo c2 = costoABM.traerCosto(idCosto2);
@@ -26,52 +27,41 @@ public class TestFestivalCosto {
 					LocalDate.of(2026, 1, 15), c1);
 			int idF2 = festivalABM.agregar("Epicentro Gourmet Invierno", "Invierno 2026", LocalDate.of(2026, 7, 5),
 					LocalDate.of(2026, 7, 10), c2);
-			System.out.println("Festivales agregados: " + idF1 + ", " + idF2);
+			System.out.println("Creados costos " + idCosto1 + ", " + idCosto2 + " y festivales " + idF1 + ", " + idF2);
 
-			System.out.println("\n[CU Costo] traerCosto(" + idCosto1 + "): " + costoABM.traerCosto(idCosto1));
+			// Basicas (soporte)
+			System.out.println("\n--- Basica: traerFestival(" + idF1 + ") ---");
+			TablaASCII.imprimirFestivales(java.util.Collections.singletonList(festivalABM.traerFestival(idF1)));
+			System.out.println("\n--- Basica: traerFestival() ---");
+			TablaASCII.imprimirFestivales(festivalABM.traerFestival());
+			System.out.println("\n--- Basica: traerCosto() ---");
+			TablaASCII.imprimirCostos(costoABM.traerCosto());
 
-			System.out.println("\n[CU Costo] traerCosto() todos:");
-			List<Costo> costos = costoABM.traerCosto();
-			for (Costo c : costos) {
-				System.out.println(c);
-			}
+			// Vigentes en una fecha
+			System.out.println("\n--- CU1: traerVigentesEn(2026-01-12) ---");
+			List<Festival> vigentes = festivalABM.traerVigentesEn(LocalDate.of(2026, 1, 12));
+			TablaASCII.imprimirFestivales(vigentes);
 
-			System.out.println("\n[CU Costo] traerPorSuperficieMayorA(2000):");
-			for (Costo c : costoABM.traerPorSuperficieMayorA(2000)) {
-				System.out.println(c);
-			}
+			// Solapados con un rango
+			System.out.println("\n--- CU2: traerEntreFechas(2026-01-01, 2026-12-31) ---");
+			List<Festival> rango = festivalABM.traerEntreFechas(LocalDate.of(2026, 1, 1),
+					LocalDate.of(2026, 12, 31));
+			TablaASCII.imprimirFestivales(rango);
 
-			System.out.println("\n[CU Costo] traerCostoConFestivales(" + idCosto1 + "):");
+			// Festival con unidades
+			System.out.println("\n--- CU3: traerFestivalConUnidades(" + idF1 + ") ---");
+			Festival conUnidades = festivalABM.traerFestivalConUnidades(idF1);
+			TablaASCII.imprimirFestivalConUnidades(conUnidades);
+
+			// Costo con festivales
+			System.out.println("\n--- CU4: traerCostoConFestivales(" + idCosto1 + ") ---");
 			Costo conFest = costoABM.traerCostoConFestivales(idCosto1);
-			System.out.println(conFest + " -> festivales: " + conFest.getFestivales());
+			TablaASCII.imprimirCostoConFestivales(conFest);
 
-			Festival basico = festivalABM.traerFestival(idF1);
-			System.out.println("\n[CU Festival] traerFestival(" + idF1 + "): id=" + basico.getIdFestival()
-					+ ", nombre=" + basico.getNombre() + ", temporada=" + basico.getTemporada());
-
-			System.out.println("\n[CU Festival] traerFestivalConCostoYUnidades(" + idF1 + "): "
-					+ festivalABM.traerFestivalConCostoYUnidades(idF1));
-
-			System.out.println("\n[CU Festival] traerFestival() todos:");
-			List<Festival> festivales = festivalABM.traerFestival();
-			for (Festival f : festivales) {
-				System.out.println(f);
-			}
-
-			System.out.println("\n[CU Festival] traerPorTemporada('Verano 2026'):");
-			for (Festival f : festivalABM.traerPorTemporada("Verano 2026")) {
-				System.out.println(f);
-			}
-
-			System.out.println("\n[CU Festival] traerVigentesEn(2026-01-12):");
-			for (Festival f : festivalABM.traerVigentesEn(LocalDate.of(2026, 1, 12))) {
-				System.out.println(f);
-			}
-
-			System.out.println("\n[CU Festival] traerPorCosto(" + idCosto2 + "):");
-			for (Festival f : festivalABM.traerPorCosto(idCosto2)) {
-				System.out.println(f);
-			}
+			// CU5: esquemas vigentes en una fecha
+			System.out.println("\n--- CU5: traerEsquemaVigenteEn(2026-01-12) ---");
+			List<Costo> esquemas = costoABM.traerEsquemaVigenteEn(LocalDate.of(2026, 1, 12));
+			TablaASCII.imprimirCostos(esquemas);
 
 		} catch (Exception e) {
 			e.printStackTrace();
