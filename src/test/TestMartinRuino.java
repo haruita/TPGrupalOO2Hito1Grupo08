@@ -1,6 +1,7 @@
 package test;
 
 import negocio.PlatoABM;
+import util.TablaASCII;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -11,7 +12,7 @@ import negocio.ItemPlatoABM;
 import negocio.PedidoABM;
 
 
-public class TestPedido {
+public class TestMartinRuino {
 
 	private static void agregar(PlatoABM platoABM,PedidoABM pedidoABM,ItemPlatoABM itemPlatoABM) {
 
@@ -27,7 +28,7 @@ public class TestPedido {
 		Plato p4 = platoABM.traerPlato(idP4);
 		Plato p5 = platoABM.traerPlato(idP5);
 
-		int idPed1 = pedidoABM.agregar(LocalDate.of(2026, 1, 10));
+		int idPed1 = pedidoABM.agregar(LocalDate.of(2026, 1, 11));
 		Pedido ped1 = pedidoABM.traerPedido(idPed1);
 		itemPlatoABM.agregar(p1, 2, ped1);
 		itemPlatoABM.agregar(p4, 4, ped1);
@@ -60,19 +61,15 @@ public class TestPedido {
 
 		// agregar(platoABM,pedidoABM,itemPlatoABM);
 		
-		
-		System.out.println("=== Ejemplo 1: traerPedidosEntreFechas ===");
 		List<Pedido> pedidos1 = pedidoABM.traerPedidosEntreFechas(LocalDate.of(2026, 1, 10), LocalDate.of(2026, 1, 15));
-		for (Pedido p : pedidos1) {
-			System.out.println(p + "\nTotal (Ganancia)= "+ p.calcularTotal() + " ("+ p.calcularGanancia() +")\n");
-		}
-		System.out.println("Este Ejemplo tuvo que haber dado Pedido 1,2 y 3\n\n\n");
+		System.out.println("\n== Entre Fecha 10/01/2026 - 15/01/2026 ==");
+		TablaASCII.imprimirPedidos(pedidos1);
+		System.out.println("Este Ejemplo tuvo que haber dado Pedido ID = 1, 2 y 3\n\n\n");
 
 		List<Pedido> pedidos2 = pedidoABM.traerPedidosEntreFechas(LocalDate.of(2026, 7, 1), LocalDate.of(2026, 7, 10));
-		for (Pedido p : pedidos2) {
-			System.out.println(p + "\nTotal (Ganancia)= "+ p.calcularTotal() + " ("+ p.calcularGanancia() +")\n");
-		}
-		System.out.println("Este Ejemplo tuvo que haber dado 4 y 5.\n");
+		System.out.println("\n== Entre Fecha 10/07/2026 - 10/07/2026 ==");
+		TablaASCII.imprimirPedidos(pedidos2);
+		System.out.println("Este Ejemplo tuvo que haber dado ID = 4 y 5.\n");
 		
 		
 		System.out.println("Test de Martin Ruino");

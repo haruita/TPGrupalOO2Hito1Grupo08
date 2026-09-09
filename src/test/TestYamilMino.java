@@ -38,29 +38,29 @@ public class TestYamilMino {
 			TablaASCII.imprimirCostos(costoABM.traerCosto());
 
 			// Vigentes en una fecha
-			System.out.println("\n--- CU1: traerVigentesEn(2026-01-12) ---");
 			List<Festival> vigentes = festivalABM.traerVigentesEn(LocalDate.of(2026, 1, 12));
+			System.out.println("\n--- CU1: traerVigentesEn(2026-01-12) ---");
 			TablaASCII.imprimirFestivales(vigentes);
 
 			// Solapados con un rango
-			System.out.println("\n--- CU2: traerEntreFechas(2026-01-01, 2026-12-31) ---");
 			List<Festival> rango = festivalABM.traerEntreFechas(LocalDate.of(2026, 1, 1),
 					LocalDate.of(2026, 12, 31));
+			System.out.println("\n--- CU2: traerEntreFechas(2026-01-01, 2026-12-31) ---");
 			TablaASCII.imprimirFestivales(rango);
 
 			// Festival con unidades
-			System.out.println("\n--- CU3: traerFestivalConUnidades(" + idF1 + ") ---");
 			Festival conUnidades = festivalABM.traerFestivalConUnidades(idF1);
+			System.out.println("\n--- CU3: traerFestivalConUnidades(" + idF1 + ") ---");
 			TablaASCII.imprimirFestivalConUnidades(conUnidades);
 
 			// Costo con festivales
-			System.out.println("\n--- CU4: traerCostoConFestivales(" + idCosto1 + ") ---");
 			Costo conFest = costoABM.traerCostoConFestivales(idCosto1);
+			System.out.println("\n--- CU4: traerCostoConFestivales(" + idCosto1 + ") ---");
 			TablaASCII.imprimirCostoConFestivales(conFest);
 
 			// CU5: esquemas vigentes en una fecha
-			System.out.println("\n--- CU5: traerEsquemaVigenteEn(2026-01-12) ---");
 			List<Costo> esquemas = costoABM.traerEsquemaVigenteEn(LocalDate.of(2026, 1, 12));
+			System.out.println("\n--- CU5: traerEsquemaVigenteEn(2026-01-12) ---");
 			TablaASCII.imprimirCostos(esquemas);
 
 		} catch (Exception e) {
