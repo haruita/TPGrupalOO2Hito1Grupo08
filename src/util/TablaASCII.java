@@ -2,10 +2,14 @@ package util;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import datos.Costo;
 import datos.Festival;
 import datos.FoodTruck;
+import datos.ItemPlato;
+import datos.Pedido;
+import datos.Plato;
 import datos.PuestoDesarmable;
 import datos.UnidadDeVenta;
 
@@ -140,4 +144,46 @@ public class TablaASCII {
 		imprimir("UNIDADES DEL FESTIVAL " + f.getIdFestival(),
 				new String[] { "ID", "NOMBRE COMERCIAL", "TIPO", "SUPERFICIE M2", "DETALLE" }, filas);
 	}
+	
+	// Martin Ruino: Pedido
+	
+	private static String []filaPedido(Pedido p) {
+		UnidadDeVenta uv = p.getUnidadDeVenta();
+		String unidad = (uv == null) ? "-" : String.valueOf(uv.getIdUnidadDeVenta());
+		return new String[] {
+				String.valueOf(p.getIdPedido()),
+				String.valueOf(p.getFecha()),
+				unidad,
+				p.getItems() == null ? "-" : String.valueOf(p.calcularTotal()),
+						p.getItems() == null ? "-" : String.valueOf(p.calcularGanancia())
+		};
+	};
+
+	private static String[] filaItemPlatos(ItemPlato ip) {
+		Plato p = ip.getPlato();
+		String plato = (p == null) ? "-" : String.valueOf(p.getIdPlato());
+		return new String[] {
+				String.valueOf(ip.getIdItemPlato()),
+				plato,
+				String.valueOf(ip.getCantidad()),
+				String.valueOf(ip.getSubtotal())
+		};
+	}
+	
+	public static void imprimirItemPlatos(List<ItemPlato> lista) {
+		List<String[]> filas = new ArrayList<>();
+		for (ItemPlato ip : lista){
+		    filas.add(filaItemPlatos(ip));
+		}
+		imprimir("ItemPlatos",new String[] {"ID","PLATO","CANTIDAD","SUBTOTAL"},filas);
+	}
+	
+	public static void imprimirPedidos(List<Pedido> lista){
+	    List<String[]> filas = new ArrayList<>();
+		for (Pedido p : lista){
+		    filas.add(filaPedido(p));
+		}
+		imprimir("PEDIDOS", new String[] { "ID","FECHA","UNIDAD","TOTAL","GANANCIA"},filas);
+	}
+
 }
