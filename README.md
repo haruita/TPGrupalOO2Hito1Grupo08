@@ -19,6 +19,8 @@ Su objetivo principal es optimizar la administración de sus festivales gastron�
 
 La aplicación fue desarrollada en Java y utiliza Hibernate para la persistencia de datos en una base de datos MySQL. Su arquitectura se divide en las capas de datos, acceso a datos (DAO) y lógica de negocio (ABM).
 
+El diagrama del sistema se encuentra disponible en [`Diagrama de Clases.pdf`](./Diagrama%20de%20Clases.pdf), ubicado en la carpeta raíz del proyecto.
+
 ## Distribución del trabajo
 
 | Integrante | Clases y funcionalidades principales |
