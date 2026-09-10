@@ -121,5 +121,67 @@ public class UnidadDeVentaDao {
 			session.close();
 		}
 	}
+	
+	public List<FoodTruck> traerFoodTrucksConConexionElectrica() {
+		List<FoodTruck> lista = null;
 
+		try {
+			iniciaOperacion();
+
+			lista = session.createQuery(
+					"from FoodTruck f "
+					+ "where f.conexionElectrica = true "
+					+ "order by f.nombreComercial",
+					FoodTruck.class)
+					.list();
+
+		} finally {
+			session.close();
+		}
+
+		return lista;
+	}
+
+	public List<FoodTruck> traerFoodTrucksPorSuperficieYConexion(double superficieMinima) {
+		List<FoodTruck> lista = null;
+
+		try {
+			iniciaOperacion();
+
+			lista = session.createQuery(
+					"from FoodTruck f "
+					+ "where f.superficie >= :superficieMinima "
+					+ "and f.conexionElectrica = true "
+					+ "order by f.superficie desc",
+					FoodTruck.class)
+					.setParameter("superficieMinima", superficieMinima)
+					.list();
+
+		} finally {
+			session.close();
+		}
+
+		return lista;
+	}
+	
+	public List<PuestoDesarmable> traerPuestosPorCarpasYTiempo(int cantidadMinimaCarpas) {
+		List<PuestoDesarmable> lista = null;
+
+		try {
+			iniciaOperacion();
+
+			lista = session.createQuery(
+					"from PuestoDesarmable p "
+					+ "where p.cantCarpas >= :cantidadMinimaCarpas "
+					+ "order by p.tiempoDeArmado asc, p.cantCarpas desc",
+					PuestoDesarmable.class)
+					.setParameter("cantidadMinimaCarpas", cantidadMinimaCarpas)
+					.list();
+
+		} finally {
+			session.close();
+		}
+
+		return lista;
+	}
 }
