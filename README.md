@@ -28,8 +28,6 @@ La aplicación fue desarrollada en Java y utiliza Hibernate para la persistencia
 | **Yamil Miño** | `Festival`, `Costo`, `FestivalDao`, `CostoDao`, `FestivalABM` y `CostoABM`. Gestión de festivales, costos y consultas por fechas. |
 | **Santiago Saavedra** | `UnidadDeVenta`, `FoodTruck`, `PuestoDesarmable`, `UnidadDeVentaDao` y `UnidadDeVentaABM`. Gestión de las unidades de venta del predio. |
 
-> Algunas clases recibieron modificaciones posteriores durante la integración general del proyecto.
-
 ## Ejecución paso a paso
 
 ### 1. Preparar MySQL
@@ -56,7 +54,7 @@ Si la instalación local utiliza otras credenciales o puerto, modificar las prop
 1. Abrir Eclipse.
 2. Seleccionar **File > Import > General > Existing Projects into Workspace**.
 3. Elegir la carpeta raíz del repositorio.
-4. Verificar que Eclipse utilice **Java 21** y que las bibliotecas de `libs` estén presentes en el **Build Path**.
+4. Verificar que las bibliotecas de `libs` estén presentes en el **Build Path**.
 
 ### 3. Comprobar la conexión y crear las tablas
 
@@ -69,8 +67,6 @@ Este test abre una sesión de Hibernate, verifica la conexión con MySQL y provo
 Ejecutar primero `src/test/TestInserciones.java` como **Java Application**.
 
 Este programa carga los datos necesarios para las pruebas: personas, platos, pedidos y los ítems que componen cada pedido. Debe ejecutarse sobre una base vacía para conservar los identificadores esperados y evitar registros duplicados.
-
-> `TestInserciones` forma parte de la integración de tests de la rama `feat/pedido-tests`. Antes de seguir estas instrucciones, verificar que dicha integración ya se encuentre incorporada en la rama de trabajo.
 
 ### 5. Ejecutar los tests de casos de uso
 
@@ -87,5 +83,3 @@ Después de poblar la base, ejecutar las siguientes clases, una por una, como **
 3. **`TestYamilMino.java`**
 
    Crea costos y festivales de prueba; luego consulta festivales vigentes en una fecha, festivales comprendidos en un período, sus unidades de venta y los esquemas de costos asociados.
-
-Los resultados se muestran en la consola de Eclipse. Varias consultas utilizan `TablaASCII` para facilitar su lectura.
