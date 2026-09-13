@@ -9,7 +9,7 @@
 
 <br>
 
-> **Estudiantes:** Enrique Leandro Ariel, Martín Ruino, Yamil Miño y Santiago Saavedra.
+> **Estudiantes:** Leandro Ariel Enrique, Martín Ruino, Yamil Miño y Santiago Saavedra.
 
 ## Descripción
 
@@ -85,3 +85,7 @@ Después de poblar la base, ejecutar las siguientes clases, una por una, como **
 3. **`TestYamilMino.java`**
 
    Crea costos y festivales de prueba; luego consulta festivales vigentes en una fecha, festivales comprendidos en un período, sus unidades de venta y los esquemas de costos asociados.
+
+4. **`TestSantiagoSaavedra.java`**
+
+   Busca una unidad de venta por su código único y consulta los food trucks con conexión eléctrica, los que además superan una superficie mínima y los puestos desarmables con una cantidad mínima de carpas, ordenados por tiempo de armado.
