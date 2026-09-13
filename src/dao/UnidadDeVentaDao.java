@@ -6,6 +6,8 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import datos.FoodTruck;
+import datos.PuestoDesarmable;
 import datos.UnidadDeVenta;
 
 public class UnidadDeVentaDao {
