@@ -7,7 +7,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import datos.ItemPlato;
 import datos.Pedido;
-import datos.Plato;
 
 public class ItemPlatoDao {
 	private static Session session;

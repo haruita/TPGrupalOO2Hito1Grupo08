@@ -1,7 +1,5 @@
 package negocio;
 
-import java.util.List;
-
 import datos.Plato;
 import datos.ItemPlato;
 import datos.Pedido;
@@ -36,7 +34,10 @@ public class ItemPlatoABM {
 		return dao.traerConPlatoYPedido(idItemPlato);
 	}
 
-	public int agregar(Plato p,int cantidad,Pedido ped) {
+	public int agregar(Plato p,int cantidad,Pedido ped) throws Exception {
+		if (cantidad<1)
+			throw new Exception("La cantidad no es valida. Tiene que ser positiva");
+
 		ItemPlato ip = new ItemPlato(p,cantidad,ped);
 		return dao.agregar(ip);
 	}

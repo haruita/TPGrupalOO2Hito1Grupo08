@@ -57,7 +57,10 @@ public class PedidoABM {
 		return dao.agregar(p);
 	}
 
-	public int agregar(UnidadDeVenta unidad, LocalDate fecha,Set<ItemPlato> items) {
+	public int agregar(UnidadDeVenta unidad, LocalDate fecha,Set<ItemPlato> items) throws Exception {
+		if(fecha.isAfter(LocalDate.now())) {
+			throw new Exception ("La fecha no es valida. No puede ser una fecha que no haya pasado.");
+		}
 		Pedido p = new Pedido(unidad, fecha,items);
 		return dao.agregar(p);
 	}

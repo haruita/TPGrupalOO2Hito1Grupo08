@@ -24,7 +24,14 @@ public class PlatoABM {
 	}
 
 
-	public int agregar (String nombre,double precio,double costo) {
+	public int agregar (String nombre,double precio,double costo) throws Exception {
+		if (precio<1)
+			throw new Exception("El precio del plato no es valido. Tiene que ser positivo");
+		if (costo<0)
+			throw new Exception("El costo del plato no es valido. No puede ser negativo");
+		if (costo>precio)
+			throw new Exception("El costo del plato no es valido. No puede ser mayor al precio");
+		
 		Plato p = new Plato(nombre, precio, costo);
 		return dao.agregar(p);
 	}

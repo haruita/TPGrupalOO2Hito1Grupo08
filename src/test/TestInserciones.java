@@ -9,6 +9,7 @@ import negocio.ItemPlatoABM;
 import negocio.PedidoABM;
 import negocio.PersonaABM;
 import negocio.PlatoABM;
+import negocio.UnidadDeVentaABM;
 
 public class TestInserciones {
 
@@ -19,6 +20,7 @@ public class TestInserciones {
 		PlatoABM platoABM = PlatoABM.getInstancia();
 		PedidoABM pedidoABM = PedidoABM.getInstancia();
 		ItemPlatoABM itemPlatoABM = ItemPlatoABM.getInstancia();
+		UnidadDeVentaABM unidadABM = new UnidadDeVentaABM();
 
 		// =============================================================== Insertar Personas
 		try {
@@ -48,7 +50,7 @@ public class TestInserciones {
 			System.out.println(e.getMessage());
 		}
 
-		// =============================================================== Insertar platos,items y Pedidos
+		// =============================================================== Insertar platos, items y Pedidos
 		try {
 			int idP1 = platoABM.agregar("Tacos", 1500.0, 700.0);
 			int idP2 = platoABM.agregar("Hamburguesa", 2200.0, 1000.0);
@@ -88,6 +90,16 @@ public class TestInserciones {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-
+		
+		// =============================================================== Insertar Unidades de venta
+		try {
+			unidadABM.agregarFoodTruck("El Buen Sabor", "FT001", 20.0, null, "AA123BB", true);
+			unidadABM.agregarFoodTruck("La Esquina", "FT002", 15.0, null, "AB456CD", false );
+			unidadABM.agregarFoodTruck("Sabores Urbanos",	"FT003", 30.0, null, "AC789EF", true);
+			unidadABM.agregarPuestoDesarmable("Puesto Criollo", "PD001", 10.0, null, 3, 20);
+			unidadABM.agregarPuestoDesarmable("Delicias del Festival", "PD002", 25.0, null, 5, 30);
+		}  catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 }

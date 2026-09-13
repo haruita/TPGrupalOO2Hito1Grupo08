@@ -1,23 +1,18 @@
 package test;
 
-import negocio.PlatoABM;
 import util.TablaASCII;
 
 import java.time.LocalDate;
 import java.util.List;
 
 import datos.Pedido;
-import datos.Plato;
-import negocio.ItemPlatoABM;
 import negocio.PedidoABM;
-
 
 public class TestMartinRuino {
 
 	public static void main(String[] args) {
-		PlatoABM platoABM = PlatoABM.getInstancia();
+
 		PedidoABM pedidoABM = PedidoABM.getInstancia();
-		ItemPlatoABM itemPlatoABM = ItemPlatoABM.getInstancia();
 
 		List<Pedido> pedidos1 = pedidoABM.traerPedidosEntreFechas(LocalDate.of(2026, 1, 10), LocalDate.of(2026, 1, 15));
 
@@ -30,9 +25,6 @@ public class TestMartinRuino {
 		System.out.println("\n== Entre Fecha 10/07/2026 - 10/07/2026 ==");
 		TablaASCII.imprimirPedidos(pedidos2);
 		System.out.println("Este Ejemplo tuvo que haber dado ID = 4 y 5.\n");
-		
-		
-		System.out.println("Test de Martin Ruino");
 	}
 
 }
