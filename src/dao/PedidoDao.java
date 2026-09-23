@@ -52,29 +52,25 @@ public class PedidoDao {
 		try {
 			iniciaOperacion();
 			String hQL = "from Pedido p left join fetch p.unidad u where p.idPedido = :idPedido";
-			obj = session.createQuery(hQL, Pedido.class)
-					.setParameter("idPedido", idPedido)
-					.uniqueResult();
+			obj = session.createQuery(hQL, Pedido.class).setParameter("idPedido", idPedido).uniqueResult();
 		} finally {
 			session.close();
 		}
 		return obj;
 	}
-	
+
 	public Pedido traerConItems(int idPedido) {
 		Pedido obj = null;
 		try {
 			iniciaOperacion();
 			String hQL = "from Pedido p left join fetch p.items u where p.idPedido = :idPedido";
-			obj = session.createQuery(hQL, Pedido.class)
-					.setParameter("idPedido", idPedido)
-					.uniqueResult();
+			obj = session.createQuery(hQL, Pedido.class).setParameter("idPedido", idPedido).uniqueResult();
 		} finally {
 			session.close();
 		}
 		return obj;
 	}
-	
+
 	public Pedido traerConItemsYUnidadDeVenta(int idPedido) {
 		Pedido obj = null;
 		try {
@@ -87,7 +83,7 @@ public class PedidoDao {
 		return obj;
 	}
 
-	// Trae todos los que sean de la unidad de venta especificada
+	// Trae todos los pedidos de una unidad de venta
 	public List<Pedido> traer(UnidadDeVenta unidad) {
 		List<Pedido> lista = null;
 		try {
@@ -101,19 +97,22 @@ public class PedidoDao {
 		return lista;
 	}
 
-	public List<Pedido> traerEntreFechas(LocalDate fecha1,LocalDate fecha2) {
+	// Trae todos los pedidos de una unidad de venta entre fechas
+	public List<Pedido> traerEntreFechas(LocalDate fecha1, LocalDate fecha2) {
 		List<Pedido> lista = null;
 		try {
 			iniciaOperacion();
-			String hQL = "select distinct p from Pedido p left join fetch p.items i left join fetch i.plato where p.fecha >= :fecha1 and p.fecha <= :fecha2";
-			lista = session.createQuery(hQL, Pedido.class).setParameter("fecha1", fecha1).setParameter("fecha2", fecha2).getResultList();
+			String hQL = "select distinct p from Pedido p left join fetch p.items i left join fetch i.plato"
+					+ " where p.fecha >= :fecha1 and p.fecha <= :fecha2";
+			lista = session.createQuery(hQL, Pedido.class).setParameter("fecha1", fecha1).setParameter("fecha2", fecha2)
+					.getResultList();
 		} finally {
 			session.close();
 		}
 		return lista;
 	}
-	
-	// Trae todos los de la fecha especificada
+
+	// Trae todos los pedidos de la fecha especifica
 	public List<Pedido> traerDeFecha(LocalDate fecha) {
 		List<Pedido> lista = null;
 		try {
@@ -125,7 +124,40 @@ public class PedidoDao {
 		}
 		return lista;
 	}
-	
+
+	// Trae todos los pedidos de una unidad de venta entre fechas
+	public List<Pedido> traerEntreFechas(UnidadDeVenta unidad, LocalDate fecha1, LocalDate fecha2) {
+		List<Pedido> lista = null;
+		try {
+			iniciaOperacion();
+			String hQL = "select distinct p from Pedido p left join fetch p.unidad u left join fetch p.items i left join fetch i.plato"
+					+ " where p.unidad.idUnidadDeVenta = :idUnidad"
+					+ " and p.fecha >= :fecha1 and p.fecha <= :fecha2 order by p.fecha asc";
+			lista = session.createQuery(hQL, Pedido.class)
+					.setParameter("idUnidad", unidad.getIdUnidadDeVenta())
+					.setParameter("fecha1", fecha1).setParameter("fecha2", fecha2).getResultList();
+		} finally {
+			session.close();
+		}
+		return lista;
+	}
+
+	// Trae todos los pedidos de una unidad de venta en una fecha especifica
+	public List<Pedido> traerDeFecha(UnidadDeVenta unidad, LocalDate fecha) {
+		List<Pedido> lista = null;
+		try {
+			iniciaOperacion();
+			String hQL = "select distinct p from Pedido p left join fetch p.unidad u left join fetch p.items i left join fetch i.plato"
+					+ " where p.unidad.idUnidadDeVenta = :idUnidad and p.fecha = :fecha";
+			lista = session.createQuery(hQL, Pedido.class)
+					.setParameter("idUnidad", unidad.getIdUnidadDeVenta())
+					.setParameter("fecha", fecha).getResultList();
+		} finally {
+			session.close();
+		}
+		return lista;
+	}
+
 	public int agregar(Pedido objeto) {
 		int id = 0;
 		try {

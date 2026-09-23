@@ -90,7 +90,7 @@ public class TestInserciones {
 
 			int idPed3 = pedidoABM.agregar(u1,LocalDate.of(2026, 1, 15));
 			Pedido ped3 = pedidoABM.traerPedido(idPed3);
-			itemPlatoABM.agregar(p5, 2, ped3);
+			itemPlatoABM.agregar(p5, 3, ped3);
 
 			int idPed4 = pedidoABM.agregar(u3,LocalDate.of(2026, 7, 6));
 			Pedido ped4 = pedidoABM.traerPedido(idPed4);

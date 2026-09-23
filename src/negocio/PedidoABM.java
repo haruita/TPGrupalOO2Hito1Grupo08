@@ -46,6 +46,18 @@ public class PedidoABM {
 	public List<Pedido> traerPedidosEntreFechas(LocalDate fecha1,LocalDate fecha2) {
 		return dao.traerEntreFechas(fecha1,fecha2);
 	}
+
+
+	public List<Pedido> traerPedidosEnFecha(UnidadDeVenta unidad, LocalDate fecha) throws Exception {
+	    if (unidad == null) throw new Exception("La unidad de venta no es valida.");
+		return dao.traerDeFecha(unidad, fecha);
+	}
+
+	public List<Pedido> traerPedidosEntreFechas(UnidadDeVenta unidad, LocalDate fecha1, LocalDate fecha2) throws Exception {
+	    if (unidad == null) throw new Exception("La unidad de venta no es valida.");
+		return dao.traerEntreFechas(unidad, fecha1, fecha2);
+	}
+	
 	
 	public int agregar(LocalDate fecha) {
 		Pedido p = new Pedido(fecha);
