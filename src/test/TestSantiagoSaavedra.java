@@ -28,9 +28,9 @@ public class TestSantiagoSaavedra {
 				System.out.println(p);
 			}
 
-			System.out.println("Unidades del Festival Primavera:");
+			System.out.println("Unidades del Festival 1:");
 
-			for (UnidadDeVenta unidad : festivalABM.traerUnidadesPorFestival("Festival Primavera")) {
+			for (UnidadDeVenta unidad : festivalABM.traerUnidadesPorFestival("Festival 1")) {
     			System.out.println(unidad);
 			}
 		} catch (Exception e) {
