@@ -38,7 +38,8 @@
       ],
       "updated": 1787279835210,
       "link": null,
-      "locked": false
+      "locked": false,
+      "created": null
     },
     {
       "id": "co871VpBZILILgdgr4pTr",
@@ -77,7 +78,10 @@
       "containerId": null,
       "originalText": "Cajero",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "oMM-gxord_1DknoZs2XNZ",
@@ -124,7 +128,8 @@
       "endBinding": null,
       "startArrowhead": null,
       "endArrowhead": null,
-      "polygon": false
+      "polygon": false,
+      "created": null
     },
     {
       "id": "5deJSy7zv8mdPnPWPeyO-",
@@ -163,7 +168,10 @@
       "containerId": null,
       "originalText": "- turno: String",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "Gjo-zCdOkBFsCXzbDuITj",
@@ -200,7 +208,8 @@
       ],
       "updated": 1787279835210,
       "link": null,
-      "locked": false
+      "locked": false,
+      "created": null
     },
     {
       "id": "5B5yXsHiE1Nns3ntD_5lp",
@@ -239,7 +248,10 @@
       "containerId": null,
       "originalText": "Cocinero",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "qMECftXKJVA5X3hYgSVG1",
@@ -286,7 +298,8 @@
       "endBinding": null,
       "startArrowhead": null,
       "endArrowhead": null,
-      "polygon": false
+      "polygon": false,
+      "created": null
     },
     {
       "id": "GiUqaGW2tImsrKIgdITz0",
@@ -325,7 +338,10 @@
       "containerId": null,
       "originalText": "- especialidad: String\n- categoria: String",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "ql3V-EQTM5t7gCTS6JwrR",
@@ -370,7 +386,8 @@
       ],
       "updated": 1787882409522,
       "link": null,
-      "locked": false
+      "locked": false,
+      "created": null
     },
     {
       "id": "JgG04DDKpItmd1FyHDO8T",
@@ -411,7 +428,10 @@
       "containerId": null,
       "originalText": "Persona",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "ItRCLfu6fPkWIDgfTvPrU",
@@ -458,7 +478,8 @@
       "endBinding": null,
       "startArrowhead": null,
       "endArrowhead": null,
-      "polygon": false
+      "polygon": false,
+      "created": null
     },
     {
       "id": "r-ETAXQR-AWonbMK9d2Hg",
@@ -499,7 +520,10 @@
       "containerId": null,
       "originalText": "# idPersona: int\n# nombre: String\n# apellido: String\n# dni: long\n# fechaNacimiento: LocalDate\n# fechaIngreso: LocalDate\n# sueldoBase: double",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "UqH95-UA5OHb-OpRQCfwI",
@@ -567,7 +591,8 @@
       "elbowed": true,
       "fixedSegments": null,
       "startIsSpecial": null,
-      "endIsSpecial": null
+      "endIsSpecial": null,
+      "created": null
     },
     {
       "id": "CbiTyr3jWzFbo--Z3AktB",
@@ -635,7 +660,8 @@
       "elbowed": true,
       "fixedSegments": null,
       "startIsSpecial": null,
-      "endIsSpecial": null
+      "endIsSpecial": null,
+      "created": null
     },
     {
       "id": "Yec3meevPCANn0_0bvn_v",
@@ -672,7 +698,10 @@
       "containerId": null,
       "originalText": "1",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "NvbBGqrbliRJnfwDFBBfr",
@@ -709,7 +738,10 @@
       "containerId": null,
       "originalText": "1",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "ObFo2OfDG8YRmKB2AsGLp",
@@ -746,7 +778,10 @@
       "containerId": null,
       "originalText": "1",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "SCEUH6gwMMckKkPhSzxkG",
@@ -783,7 +818,10 @@
       "containerId": null,
       "originalText": "1",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "iEDP1_pnXNKiZHzyqErCk",
@@ -809,8 +847,8 @@
         "type": 3
       },
       "seed": 2026343751,
-      "version": 535,
-      "versionNonce": 1375187860,
+      "version": 536,
+      "versionNonce": 1708869892,
       "isDeleted": false,
       "boundElements": [
         {
@@ -838,9 +876,10 @@
           "type": "arrow"
         }
       ],
-      "updated": 1787871027951,
+      "updated": 1790210280745,
       "link": null,
-      "locked": false
+      "locked": false,
+      "created": null
     },
     {
       "id": "hH02WX1Y92bQRJNuxUMAj",
@@ -881,7 +920,10 @@
       "containerId": null,
       "originalText": "UnidadDeVenta",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "kiIc_PhhxwmsNhwW-T1Uq",
@@ -928,7 +970,8 @@
       "endBinding": null,
       "startArrowhead": null,
       "endArrowhead": null,
-      "polygon": false
+      "polygon": false,
+      "created": null
     },
     {
       "id": "_CmyZC2Rf2julNRt3-631",
@@ -969,7 +1012,10 @@
       "containerId": null,
       "originalText": "# idUnidadDeVenta: int\n# nombreComercial: String\n# superficie: double\n# responsable: Persona\n# personal: Persona\n# platos: Plato\n# pedidos: Pedido",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "_XTm1dwN4hjzj6B3eB6lU",
@@ -1029,7 +1075,8 @@
       "elbowed": true,
       "fixedSegments": null,
       "startIsSpecial": null,
-      "endIsSpecial": null
+      "endIsSpecial": null,
+      "created": null
     },
     {
       "id": "vCLxA_wZljDHMFkbNnkW3",
@@ -1066,7 +1113,10 @@
       "containerId": null,
       "originalText": "0..*",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "cBkATZ4hhOB5na-rNJQ7p",
@@ -1103,7 +1153,10 @@
       "containerId": null,
       "originalText": "1",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "FEYUz_MdIivqbYWiBwgH9",
@@ -1140,7 +1193,8 @@
       ],
       "updated": 1787882440623,
       "link": null,
-      "locked": false
+      "locked": false,
+      "created": null
     },
     {
       "id": "hufUQoL6FDhQlWPJQ9gMH",
@@ -1181,7 +1235,10 @@
       "containerId": null,
       "originalText": "FoodTruck",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "GQTxhKXyE8ikW7vGHoCLV",
@@ -1228,7 +1285,8 @@
       "endBinding": null,
       "startArrowhead": null,
       "endArrowhead": null,
-      "polygon": false
+      "polygon": false,
+      "created": null
     },
     {
       "id": "PQAVQAWlw4XWqCAYdirey",
@@ -1269,7 +1327,10 @@
       "containerId": null,
       "originalText": "- patente: String\n- conexionElectrica: boolean",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "Rjj7zW09r9D8PSDmK4ZT1",
@@ -1306,7 +1367,8 @@
       ],
       "updated": 1787882440633,
       "link": null,
-      "locked": false
+      "locked": false,
+      "created": null
     },
     {
       "id": "_BdkeckpsF86kgyrZNUyy",
@@ -1347,7 +1409,10 @@
       "containerId": null,
       "originalText": "PuestoDesarmable",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "RBXqXujjtvH6yVBqulV-i",
@@ -1394,7 +1459,8 @@
       "endBinding": null,
       "startArrowhead": null,
       "endArrowhead": null,
-      "polygon": false
+      "polygon": false,
+      "created": null
     },
     {
       "id": "16FTzsMO3nsrrdMaqfcTM",
@@ -1435,7 +1501,10 @@
       "containerId": null,
       "originalText": "- cantCarpas: int\n- tiempoDeArmado: int",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "z827aA-Cw3uA9lMC3pLYh",
@@ -1503,7 +1572,8 @@
       "elbowed": true,
       "fixedSegments": null,
       "startIsSpecial": null,
-      "endIsSpecial": null
+      "endIsSpecial": null,
+      "created": null
     },
     {
       "id": "lCHQeobuu2zs7yv_8tNcP",
@@ -1571,7 +1641,8 @@
       "elbowed": true,
       "fixedSegments": null,
       "startIsSpecial": null,
-      "endIsSpecial": null
+      "endIsSpecial": null,
+      "created": null
     },
     {
       "id": "jxaCs8O7EQuW8inUl7EfE",
@@ -1608,7 +1679,10 @@
       "containerId": null,
       "originalText": "1",
       "autoResize": false,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "_YPg9pZ_I3S6swcCivh2S",
@@ -1645,7 +1719,10 @@
       "containerId": null,
       "originalText": "1",
       "autoResize": false,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "s32WptwGWp6d5FbopH7sd",
@@ -1682,7 +1759,10 @@
       "containerId": null,
       "originalText": "1",
       "autoResize": false,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "a_QIt3FsWLsaieCuQxbiL",
@@ -1719,7 +1799,10 @@
       "containerId": null,
       "originalText": "1",
       "autoResize": false,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "w04n_yYg1d2pHrGTX8EIP",
@@ -1760,7 +1843,8 @@
       ],
       "updated": 1787870641197,
       "link": null,
-      "locked": false
+      "locked": false,
+      "created": null
     },
     {
       "id": "WBukUVim8t8rx8rqxzSuK",
@@ -1801,7 +1885,10 @@
       "containerId": null,
       "originalText": "Festival",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "GYh7hjTlb7nl7A8daA1im",
@@ -1848,7 +1935,8 @@
       "endBinding": null,
       "startArrowhead": null,
       "endArrowhead": null,
-      "polygon": false
+      "polygon": false,
+      "created": null
     },
     {
       "id": "fT7GIP9IuzQU-WzgbboWs",
@@ -1889,7 +1977,10 @@
       "containerId": null,
       "originalText": "- idFestival: int\n- nombre: String\n- temporada: String\n- fechaInicio: LocalDate\n- fachaFin: LocalDate\n- costos: Costo\n- unidades: UnidadDeVenta",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "jyUFsygpbNM_XU_FXghXz",
@@ -1949,7 +2040,8 @@
       "elbowed": true,
       "fixedSegments": null,
       "startIsSpecial": null,
-      "endIsSpecial": null
+      "endIsSpecial": null,
+      "created": null
     },
     {
       "id": "K6IglEymOBdFGod1CYkjv",
@@ -1986,7 +2078,10 @@
       "containerId": null,
       "originalText": "1..*",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "CLaMCSz4upW2DSZpqyaOD",
@@ -2023,7 +2118,10 @@
       "containerId": null,
       "originalText": "1..*",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "KSM3uzuvn4w_k-3bupS8q",
@@ -2060,7 +2158,8 @@
       ],
       "updated": 1787882440634,
       "link": null,
-      "locked": false
+      "locked": false,
+      "created": null
     },
     {
       "id": "X4bT_ToJxkq9XNbXPi4u5",
@@ -2101,7 +2200,10 @@
       "containerId": null,
       "originalText": "Costo",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "sK0gDwxepTHspJUrp_Yvm",
@@ -2148,7 +2250,8 @@
       "endBinding": null,
       "startArrowhead": null,
       "endArrowhead": null,
-      "polygon": false
+      "polygon": false,
+      "created": null
     },
     {
       "id": "D2xcEeWXdudfSiZitE5Y5",
@@ -2189,7 +2292,10 @@
       "containerId": null,
       "originalText": "- idCosto: int\n- porSuperficie: double\n- porMontaje: double\n- porElectricidad: double",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "la_UYvJ-7i_5CQZRJYIPe",
@@ -2249,7 +2355,8 @@
       "elbowed": true,
       "fixedSegments": null,
       "startIsSpecial": null,
-      "endIsSpecial": null
+      "endIsSpecial": null,
+      "created": null
     },
     {
       "id": "Pd144BAsdeejzidqeJ9NV",
@@ -2286,7 +2393,10 @@
       "containerId": null,
       "originalText": "1",
       "autoResize": false,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "a8gs-7ThVtMepmJAHI9MV",
@@ -2323,7 +2433,10 @@
       "containerId": null,
       "originalText": "1",
       "autoResize": false,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "ULu0-AIhKYOGdI1AFLABq",
@@ -2349,8 +2462,8 @@
         "type": 3
       },
       "seed": 1504118119,
-      "version": 703,
-      "versionNonce": 99605591,
+      "version": 709,
+      "versionNonce": 1779947524,
       "isDeleted": false,
       "boundElements": [
         {
@@ -2362,9 +2475,10 @@
           "type": "arrow"
         }
       ],
-      "updated": 1787882344685,
+      "updated": 1790210280745,
       "link": null,
-      "locked": false
+      "locked": false,
+      "created": null
     },
     {
       "id": "CpwGdvUdD1qZnA0wzIeMm",
@@ -2390,11 +2504,11 @@
         "type": 2
       },
       "seed": 1502593159,
-      "version": 837,
-      "versionNonce": 754681783,
+      "version": 843,
+      "versionNonce": 198896388,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1787882344686,
+      "updated": 1790210280744,
       "link": null,
       "locked": false,
       "text": "Pedido",
@@ -2405,7 +2519,10 @@
       "containerId": null,
       "originalText": "Pedido",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "DVrFLyZEXgbABJLD3bKMu",
@@ -2431,11 +2548,11 @@
         "type": 2
       },
       "seed": 1324619687,
-      "version": 569,
-      "versionNonce": 2042591447,
+      "version": 575,
+      "versionNonce": 1675638588,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1787882344686,
+      "updated": 1790210280744,
       "link": null,
       "locked": false,
       "points": [
@@ -2452,7 +2569,8 @@
       "endBinding": null,
       "startArrowhead": null,
       "endArrowhead": null,
-      "polygon": false
+      "polygon": false,
+      "created": null
     },
     {
       "id": "Dqy-JRsvNutL551bxAJnW",
@@ -2460,7 +2578,7 @@
       "x": 1543.9066196093274,
       "y": 772.4798903708477,
       "width": 244.89552307128906,
-      "height": 100,
+      "height": 80,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "#f3f0ff",
@@ -2478,22 +2596,25 @@
         "type": 2
       },
       "seed": 1073777351,
-      "version": 1121,
-      "versionNonce": 1782366007,
+      "version": 1130,
+      "versionNonce": 1926163076,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1787882367364,
+      "updated": 1790210280744,
       "link": null,
       "locked": false,
-      "text": "- idPedido: int\n- unidadVenta: UnidadDeVenta\n- festival: Festival\n- fecha: LocalDate\n- items: ItemPlato",
+      "text": "- idPedido: int\n- unidadVenta: UnidadDeVenta\n- fecha: LocalDate\n- items: ItemPlato",
       "fontSize": 16,
       "fontFamily": 8,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "- idPedido: int\n- unidadVenta: UnidadDeVenta\n- festival: Festival\n- fecha: LocalDate\n- items: ItemPlato",
+      "originalText": "- idPedido: int\n- unidadVenta: UnidadDeVenta\n- fecha: LocalDate\n- items: ItemPlato",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "tcsafTEe8B35CSg9gDtU0",
@@ -2515,11 +2636,11 @@
       "index": "b01",
       "roundness": null,
       "seed": 1508787305,
-      "version": 202,
-      "versionNonce": 645937527,
+      "version": 208,
+      "versionNonce": 365817788,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1787882344685,
+      "updated": 1790210280744,
       "link": null,
       "locked": false,
       "points": [
@@ -2561,7 +2682,8 @@
       "elbowed": true,
       "fixedSegments": null,
       "startIsSpecial": null,
-      "endIsSpecial": null
+      "endIsSpecial": null,
+      "created": null
     },
     {
       "id": "mUVGRXL82zy7FolgxVApE",
@@ -2598,7 +2720,10 @@
       "containerId": null,
       "originalText": "1",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "S4C0bUBTw2KAfdm3rzGrt",
@@ -2635,7 +2760,10 @@
       "containerId": null,
       "originalText": "0..*",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "8aPRFvsoD58rJR5oW7ddB",
@@ -2661,22 +2789,23 @@
         "type": 3
       },
       "seed": 2104889223,
-      "version": 866,
-      "versionNonce": 2036808759,
+      "version": 867,
+      "versionNonce": 1244279228,
       "isDeleted": false,
       "boundElements": [
         {
-          "id": "8jZ5wR0i_kw0TNKMunJw3",
+          "id": "wk_fjpL-VsknOgNObi9Ph",
           "type": "arrow"
         },
         {
-          "id": "wk_fjpL-VsknOgNObi9Ph",
+          "id": "8jZ5wR0i_kw0TNKMunJw3",
           "type": "arrow"
         }
       ],
-      "updated": 1787882387807,
+      "updated": 1790210280745,
       "link": null,
-      "locked": false
+      "locked": false,
+      "created": null
     },
     {
       "id": "D1Z1kb2MNFZZuQSYc5IRN",
@@ -2717,7 +2846,10 @@
       "containerId": null,
       "originalText": "ItemPlato",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "53RP5JseD711lJXuKQ8Kx",
@@ -2764,7 +2896,8 @@
       "endBinding": null,
       "startArrowhead": null,
       "endArrowhead": null,
-      "polygon": false
+      "polygon": false,
+      "created": null
     },
     {
       "id": "Q-1ibVoapq1e-baavT54h",
@@ -2805,7 +2938,10 @@
       "containerId": null,
       "originalText": "- idItemPlato: int\n- plato: Plato\n- cantidad: int\n- subtotal: double",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "lN27reZzJTSQ88TzydGSU",
@@ -2846,7 +2982,8 @@
       ],
       "updated": 1787882324583,
       "link": null,
-      "locked": false
+      "locked": false,
+      "created": null
     },
     {
       "id": "3GIbWkhUj9B1cgSLI3tTc",
@@ -2887,7 +3024,10 @@
       "containerId": null,
       "originalText": "Plato",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "7fICgvrh5yRd9QkJcLFbV",
@@ -2934,7 +3074,8 @@
       "endBinding": null,
       "startArrowhead": null,
       "endArrowhead": null,
-      "polygon": false
+      "polygon": false,
+      "created": null
     },
     {
       "id": "Np6y6q7O-xx1nhycRewrh",
@@ -2975,7 +3116,10 @@
       "containerId": null,
       "originalText": "- idPlato: int\n- nombre: String\n- precio: double\n- costo: double",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "8jZ5wR0i_kw0TNKMunJw3",
@@ -2997,11 +3141,11 @@
       "index": "b0D",
       "roundness": null,
       "seed": 629889225,
-      "version": 197,
-      "versionNonce": 398499159,
+      "version": 203,
+      "versionNonce": 1779890692,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1787882387808,
+      "updated": 1790210280744,
       "link": null,
       "locked": false,
       "points": [
@@ -3035,7 +3179,8 @@
       "elbowed": true,
       "fixedSegments": null,
       "startIsSpecial": null,
-      "endIsSpecial": null
+      "endIsSpecial": null,
+      "created": null
     },
     {
       "id": "wk_fjpL-VsknOgNObi9Ph",
@@ -3095,7 +3240,8 @@
       "elbowed": true,
       "fixedSegments": null,
       "startIsSpecial": null,
-      "endIsSpecial": null
+      "endIsSpecial": null,
+      "created": null
     },
     {
       "id": "XLIsUUsrxw9aGvf-u3zbn",
@@ -3132,7 +3278,10 @@
       "containerId": null,
       "originalText": "1",
       "autoResize": false,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "kpPFKv1DGmug5j2BUt6OF",
@@ -3169,7 +3318,10 @@
       "containerId": null,
       "originalText": "*",
       "autoResize": false,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "30y6E_8t4fOHKIt-xCjoC",
@@ -3206,7 +3358,10 @@
       "containerId": null,
       "originalText": "1",
       "autoResize": false,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "-XyyTuBfF-44aElX9QZj6",
@@ -3243,7 +3398,10 @@
       "containerId": null,
       "originalText": "*",
       "autoResize": false,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "dbvK46YYQOczK5Ne03JR_",
@@ -3265,11 +3423,11 @@
       "index": "b0L",
       "roundness": null,
       "seed": 367907604,
-      "version": 182,
-      "versionNonce": 795038105,
+      "version": 183,
+      "versionNonce": 887502724,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1787882416769,
+      "updated": 1790210280760,
       "link": null,
       "locked": false,
       "points": [
@@ -3323,7 +3481,8 @@
         }
       ],
       "startIsSpecial": false,
-      "endIsSpecial": false
+      "endIsSpecial": false,
+      "created": null
     },
     {
       "id": "T8bNPFnZ_f6NmNkH97x_H",
@@ -3360,7 +3519,10 @@
       "containerId": null,
       "originalText": "1",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     },
     {
       "id": "0AfAzrybUM6kx4e8rfS85",
@@ -3397,7 +3559,10 @@
       "containerId": null,
       "originalText": "0..*",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "labelPosition": null,
+      "created": null,
+      "baseFontSize": null
     }
   ],
   "appState": {

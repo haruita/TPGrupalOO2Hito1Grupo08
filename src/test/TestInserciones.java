@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 import datos.Pedido;
 import datos.Plato;
-
+import datos.UnidadDeVenta;
 import negocio.ItemPlatoABM;
 import negocio.PedidoABM;
 import negocio.PersonaABM;
@@ -50,8 +50,22 @@ public class TestInserciones {
 			System.out.println(e.getMessage());
 		}
 
-		// =============================================================== Insertar platos, items y Pedidos
 		try {
+			// =============================================================== Insertar Unidades de venta
+			int idU1 = unidadABM.agregarFoodTruck("El Buen Sabor", "FT001", 20.0, null, "AA123BB", true);
+			int idU2 = unidadABM.agregarFoodTruck("La Esquina", "FT002", 15.0, null, "AB456CD", false );
+			int idU3 = unidadABM.agregarFoodTruck("Sabores Urbanos",	"FT003", 30.0, null, "AC789EF", true);
+			int idU4 = unidadABM.agregarPuestoDesarmable("Puesto Criollo", "PD001", 10.0, null, 3, 20);
+			int idU5 = unidadABM.agregarPuestoDesarmable("Delicias del Festival", "PD002", 25.0, null, 5, 30);
+
+			UnidadDeVenta u1 = unidadABM.traer(idU1);
+			UnidadDeVenta u2 = unidadABM.traer(idU2);
+			UnidadDeVenta u3 = unidadABM.traer(idU3);
+			UnidadDeVenta u4 = unidadABM.traer(idU4);
+			UnidadDeVenta u5 = unidadABM.traer(idU5);
+			
+			// =============================================================== Insertar platos, items y Pedidos
+
 			int idP1 = platoABM.agregar("Tacos", 1500.0, 700.0);
 			int idP2 = platoABM.agregar("Hamburguesa", 2200.0, 1000.0);
 			int idP3 = platoABM.agregar("Pizza", 3000.0, 1200.0);
@@ -64,42 +78,33 @@ public class TestInserciones {
 			Plato p4 = platoABM.traerPlato(idP4);
 			Plato p5 = platoABM.traerPlato(idP5);
 
-			int idPed1 = pedidoABM.agregar(LocalDate.of(2026, 1, 11));
+			int idPed1 = pedidoABM.agregar(u1,LocalDate.of(2026, 1, 11));
 			Pedido ped1 = pedidoABM.traerPedido(idPed1);
 			itemPlatoABM.agregar(p1, 2, ped1);
 			itemPlatoABM.agregar(p4, 4, ped1);
 
-			int idPed2 = pedidoABM.agregar(LocalDate.of(2026, 1, 12));
+			int idPed2 = pedidoABM.agregar(u2,LocalDate.of(2026, 1, 12));
 			Pedido ped2 = pedidoABM.traerPedido(idPed2);
 			itemPlatoABM.agregar(p2, 1, ped2);
 			itemPlatoABM.agregar(p3, 1, ped2);
 
-			int idPed3 = pedidoABM.agregar(LocalDate.of(2026, 1, 15));
+			int idPed3 = pedidoABM.agregar(u1,LocalDate.of(2026, 1, 15));
 			Pedido ped3 = pedidoABM.traerPedido(idPed3);
-			itemPlatoABM.agregar(p5, 2, ped3);
+			itemPlatoABM.agregar(p5, 3, ped3);
 
-			int idPed4 = pedidoABM.agregar(LocalDate.of(2026, 7, 6));
+			int idPed4 = pedidoABM.agregar(u3,LocalDate.of(2026, 7, 6));
 			Pedido ped4 = pedidoABM.traerPedido(idPed4);
 			itemPlatoABM.agregar(p1, 3, ped4);
 			itemPlatoABM.agregar(p2, 2, ped4);
 
-			int idPed5 = pedidoABM.agregar(LocalDate.of(2026, 7, 9));
+			int idPed5 = pedidoABM.agregar(u4,LocalDate.of(2026, 7, 9));
 			Pedido ped5 = pedidoABM.traerPedido(idPed5);
 			itemPlatoABM.agregar(p3, 2, ped5);
 			itemPlatoABM.agregar(p4, 6, ped5);
+
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		
-		// =============================================================== Insertar Unidades de venta
-		try {
-			unidadABM.agregarFoodTruck("El Buen Sabor", "FT001", 20.0, null, "AA123BB", true);
-			unidadABM.agregarFoodTruck("La Esquina", "FT002", 15.0, null, "AB456CD", false );
-			unidadABM.agregarFoodTruck("Sabores Urbanos",	"FT003", 30.0, null, "AC789EF", true);
-			unidadABM.agregarPuestoDesarmable("Puesto Criollo", "PD001", 10.0, null, 3, 20);
-			unidadABM.agregarPuestoDesarmable("Delicias del Festival", "PD002", 25.0, null, 5, 30);
-		}  catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
+
 	}
 }

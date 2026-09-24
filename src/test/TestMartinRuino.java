@@ -5,26 +5,45 @@ import util.TablaASCII;
 import java.time.LocalDate;
 import java.util.List;
 
+import datos.ItemPlato;
 import datos.Pedido;
+import datos.UnidadDeVenta;
 import negocio.PedidoABM;
+import negocio.UnidadDeVentaABM;
 
 public class TestMartinRuino {
 
 	public static void main(String[] args) {
 
 		PedidoABM pedidoABM = PedidoABM.getInstancia();
+		UnidadDeVentaABM unidadABM = new UnidadDeVentaABM();
 
-		List<Pedido> pedidos1 = pedidoABM.traerPedidosEntreFechas(LocalDate.of(2026, 1, 10), LocalDate.of(2026, 1, 15));
+		try {
+			UnidadDeVenta u1 = unidadABM.traerPorCodigoUnico("FT001");
 
-		System.out.println("\n== Entre Fecha 10/01/2026 - 15/01/2026 ==");
-		TablaASCII.imprimirPedidos(pedidos1);
-		System.out.println("Este Ejemplo tuvo que haber dado Pedido ID = 1, 2 y 3\n\n\n");
+			List<Pedido> pedidos1 = pedidoABM.traerPedidosEntreFechas(u1, LocalDate.of(2026, 1, 10), LocalDate.of(2026, 1, 13));
 
-		List<Pedido> pedidos2 = pedidoABM.traerPedidosEntreFechas(LocalDate.of(2026, 7, 1), LocalDate.of(2026, 7, 10));
+			System.out.println("\n== Pedidos de FT001 (El Buen Sabor) entre 10/01/2026 y 13/01/2026 ==");
+			TablaASCII.imprimirPedidos(pedidos1);
+			System.out.println("Deberia dar el pedido con ID 1");
+			
+			for (Pedido p : pedidos1) {
+				TablaASCII.imprimirItemsDePedido(p);
+			}
+			
+			List<Pedido> pedidos2 = pedidoABM.traerPedidosEntreFechas(u1, LocalDate.of(2026, 1, 10), LocalDate.of(2026, 1, 15));
 
-		System.out.println("\n== Entre Fecha 10/07/2026 - 10/07/2026 ==");
-		TablaASCII.imprimirPedidos(pedidos2);
-		System.out.println("Este Ejemplo tuvo que haber dado ID = 4 y 5.\n");
+			System.out.println("\n== Pedidos de FT001 (El Buen Sabor) entre 10/01/2026 y 15/01/2026 ==");
+			TablaASCII.imprimirPedidos(pedidos2);
+			System.out.println("Deberia dar los pedidos con ID 1, 3");
+
+			for (Pedido p : pedidos2) {
+				TablaASCII.imprimirItemsDePedido(p);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
