@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import datos.Festival;
+import datos.UnidadDeVenta;
 
 public class FestivalDao {
 	private static Session session;
@@ -137,4 +138,23 @@ public class FestivalDao {
 		}
 		return objeto;
 	}
+
+	public List<UnidadDeVenta> traerUnidadesPorFestival(String nombreFestival) {
+    List<UnidadDeVenta> lista = null;
+
+    try {
+        iniciaOperacion();
+        lista = session.createQuery(
+                "select u from Festival f "
+                + "join f.unidades u "
+                + "where f.nombre = :nombreFestival "
+                + "order by u.nombreComercial",
+                UnidadDeVenta.class)
+                .setParameter("nombreFestival", nombreFestival)
+                .list();
+    } finally {
+        session.close();
+    }
+    return lista;
+}
 }

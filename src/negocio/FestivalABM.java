@@ -6,6 +6,7 @@ import java.util.List;
 import dao.FestivalDao;
 import datos.Costo;
 import datos.Festival;
+import datos.UnidadDeVenta;
 
 public class FestivalABM {
 	private static FestivalABM abm = null;
@@ -63,5 +64,9 @@ public class FestivalABM {
 		if (f != null) {
 			dao.eliminar(f);
 		}
+	}
+
+	public List<UnidadDeVenta> traerUnidadesPorFestival(String nombreFestival) {
+   		return dao.traerUnidadesPorFestival(nombreFestival);
 	}
 }
