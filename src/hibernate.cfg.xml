@@ -11,7 +11,7 @@
 		<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
 		<property name="hbm2ddl.auto">update</property><!-- crea las tablas automaticamente VER create/create-drop/validate/none-->
 		
-		<property name="show_sql">true</property><!-- en true muestra hql en consola-->
+		<property name="show_sql">false</property><!-- en true muestra hql en consola-->
 		<property name="format_sql">true</property><!-- en true se ve mas legible el hql en consola-->
 
 		<!--Mapeo Entidades   -->

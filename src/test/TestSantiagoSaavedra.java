@@ -1,6 +1,7 @@
 package test;
 
 import datos.UnidadDeVenta;
+import negocio.FestivalABM;
 import negocio.UnidadDeVentaABM;
 
 public class TestSantiagoSaavedra {
@@ -8,6 +9,7 @@ public class TestSantiagoSaavedra {
 	public static void main(String[] args) {
 
 		UnidadDeVentaABM unidadABM = new UnidadDeVentaABM();
+		FestivalABM festivalABM = FestivalABM.getInstancia();
 
 		try {
 			System.out.println("Traer por codigo FT001" + unidadABM.traerPorCodigoUnico("FT001"));
